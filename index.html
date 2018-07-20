@@ -1,729 +1,757 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>俊余的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="俊余的博客">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
 <meta name="description" content="我的个人学习笔记和技术博客">
 <meta name="keywords" content="计算机">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Test">
-<meta property="og:url" content="http://yoursite.com/Test/index.html">
+<meta property="og:title" content="俊余的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="俊余的博客">
 <meta property="og:description" content="我的个人学习笔记和技术博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-06T15:25:49.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Test">
+<meta name="twitter:title" content="俊余的博客">
 <meta name="twitter:description" content="我的个人学习笔记和技术博客">
 
 
-<link rel="icon" href="/img/avatar.jpg">
 
-<link rel="stylesheet" href="/css/style.css">
-
-<link rel="stylesheet" href="/css/hl_theme/atom-light.css">
-
-<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="/js/jquery.autocomplete.min.js"></script>
-<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
 
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
 
 
 
-<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+
+  <title>俊余的博客</title>
+  
+
+
+
+
+
+
+
 
 </head>
-<div style="display: none">
-  <input class="theme_disqus_on" value="false">
-  <input class="theme_preload_comment" value="false">
-</div>
-<body>
-<aside class="nav mobile">
-    <div class="nav-left">
-        <a href="/" class="avatar_target">
-    <img class="avatar" src="/img/avatar.jpg" />
-</a>
-<div class="author">
-    <span>Junyu Zhang</span>
-</div>
 
-<div class="icon">
-    
-    <a class="rss" title="rss" href="/atom.xml" target="_blank"></a>
-    
-    
-    <a class="github" title="github" href="https://github.com/yelog" target="_blank"></a>
-    
-    
-    <a class="facebook" title="facebook" href="https://www.facebook.com/faker.tops" target="_blank"></a>
-    
-    
-    
-    <a class="linkedin" title="linkedin" href="https://www.linkedin.com/in/%E7%8E%89%E6%9D%B0-%E6%9D%A8-13a40a103/" target="_blank"></a>
-    
-    
-    
-    <a class="reddit" title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank"></a>
-    
-    
-    <a class="weibo" title="weibo" href="http://weibo.com/u/2307534817" target="_blank"></a>
-    
-    
-    <a class="email" title="email" href="mailto:jaytp@qq.com"></a>
-    
-</div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
+  
+  
+    
+  
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
 
-<ul>
-    <li class="all active">全部文章</li>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-</ul>
-<div class="left-bottom">
-    <div class="menus">
-    
-    
-    
-    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">俊余的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
-</div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+      
+        <p class="site-subtitle">东北师范大学</p>
+      
+  </div>
 
-<div style="display: none">
-    <span id="busuanzi_value_site_uv"></span>
-    <span id="busuanzi_value_site_pv"></span>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-    </div>
-    <div class="nav-right">
-        <div class="friends-area">
-    <div class="friends-title">
-        友情链接
-        <i class="back-title-list"></i>
-    </div>
-    <div class="friends-content">
-        <ul>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-        </ul>
-    </div>
-</div>
-        <div class="title-list">
-    <form onkeydown="if(event.keyCode==13){return false;}">
-        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
-        <i class="cross"></i>
-        <span>
-        <label for="tagswitch">Tags:</label>
-        <input id="tagswitch" type="checkbox">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/Octive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junyu Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
-    </form>
-    <div class="tags-list">
-    
-    <div class="clearfix"></div>
-</div>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊余的博客">
+    </span>
 
     
-    <nav id="title-list-nav">
+      <header class="post-header">
+
         
-        <a  class=""
-           href="/2018/07/06/hello-world/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2018-07-06 21:53:01">2018/07/06</span>
-        </a>
         
-        <a  class=""
-           href="/2018/07/20/Octive/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Octive基本操作">Octive基本操作</span>
-            <span class="post-date" title="2018-07-20 19:48:53">2018/07/20</span>
-        </a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/20/Octive/" itemprop="url">Octive基本操作</a></h1>
         
-    </nav>
-</div>
-    </div>
-    <div class="hide-list">
-        <div class="semicircle">
-            <div class="brackets first"><</div>
-            <div class="brackets">&gt;</div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T19:48:53+08:00">
+                2018-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </div>
-</aside>
-<div class="post">
-    <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+      </header>
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+
     
-<style>
-    .left-col .switch-btn,
-    .left-col .switch-area {
-        display: none;
-    }
-    .toc-level-3 i,
-    .toc-level-3 ol {
-        display: none !important;
-    }
-</style>
-</div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-        </article>
+      
+      
+
+      
         
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
+          
+            <h1 id="Octive基本操作"><a href="#Octive基本操作" class="headerlink" title="Octive基本操作"></a>Octive基本操作</h1><h2 id="一、基本运算"><a href="#一、基本运算" class="headerlink" title="一、基本运算"></a>一、基本运算</h2><h3 id="1-基本四则运算"><a href="#1-基本四则运算" class="headerlink" title="1.基本四则运算"></a>1.基本四则运算</h3><p>(1)5+6<br>加法运算，ans = 11；<br>(2)6-9<br>减法运算，ans = -3；<br>(3)65*8<br>乘法运算，ans = 520；<br>(4)23/8<br>除法运算，ans = 2.87500000000000；<br>(5)4^6<br>乘方运算，ans = 4096；<br>(6)sqrt(10)<br>平方根运算，ans = 3.16227766016838；</p>
+<h3 id="2-逻辑运算"><a href="#2-逻辑运算" class="headerlink" title="2.逻辑运算"></a>2.逻辑运算</h3><p>(1)1 == 2<br>判断相等，ans = 0；<br>(2)1 ~=2<br>判断不等，ans = 1；<br>(3)1 &amp;&amp; 0<br>判断逻辑与，ans = 0；<br>(4)1 || 0<br>判断逻辑或，ans = 1；<br>(5)xor(1,0)<br>判断异或，ans = 1；</p>
+<h2 id="二、基本函数"><a href="#二、基本函数" class="headerlink" title="二、基本函数"></a>二、基本函数</h2><p>(1)disp(a)<br>展示变量信息；<br>(2)disp(sprintf(‘2 decimals: %0.2f’,a))：<br>显示字符串变量，其中格式和c类似；<br>(3)PS1(‘&gt;&gt; ‘)<br>更改左边显示样式；<br>(4)format long/short<br>数据格式更改；<br>(5)hist(w)<br>将矩阵表示的分布用直方图显示出来，其中w为服从高斯分布的数据组成的矩阵;<br>(6)hist(w,50)<br>可以指定生成的直方图的方格的数量；</p>
+<h2 id="三、矩阵表示"><a href="#三、矩阵表示" class="headerlink" title="三、矩阵表示"></a>三、矩阵表示</h2><h3 id="1-普通表示"><a href="#1-普通表示" class="headerlink" title="1.普通表示"></a>1.普通表示</h3><p>(1)A = [1 2;3 4;5 6]<br>表示一个3x2的矩阵，分号表示一行；</p>
+<h3 id="2-行向量表示"><a href="#2-行向量表示" class="headerlink" title="2.行向量表示"></a>2.行向量表示</h3><p>(1)V = 1：0.1：2<br>表示从1开始每次增加0.1，最大到2的行向量；<br>(2)V = 1：6<br>表示1 2 3 4 5 6组成的行向量；</p>
+<h3 id="3-特殊函数表示"><a href="#3-特殊函数表示" class="headerlink" title="3.特殊函数表示"></a>3.特殊函数表示</h3><p>(1)W = ones（2，3）<br>表示只包含1的一个2行3列矩阵；<br>(2)W = 2*ones（2，3）<br>表示只包含2的2行3列矩阵；<br>(3)W = rand（1，3）<br>表示包含0-1之间随机小数的1行3列矩阵；<br>(4)W = randn（2，3）<br>表示服从高斯分布，标准差或者方差为1的数据组成的2行3列矩阵；</p>
+<h3 id="4-单位矩阵表示"><a href="#4-单位矩阵表示" class="headerlink" title="4.单位矩阵表示"></a>4.单位矩阵表示</h3><p>(1).E = eye（4）表示生成4x4的单位矩阵；</p>
+<h2 id="四、移动数据"><a href="#四、移动数据" class="headerlink" title="四、移动数据"></a>四、移动数据</h2><h3 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h3><p>(1)size(A)<br>返回矩阵A的各个维度数目的行向量，ans = 3 2；<br>(2)size(A,1)<br>返回矩阵A的第一维数目，ans = 3；<br>(3)size(A,2)<br>返回矩阵A的第二维数目，ans = 2；<br>(4)length(V)<br>返回矩阵的各个维度中的最大值，通常用于返回向量的维度值，ans = 4；<br>(5)load featuresX.dat<br>加载数据文件，加载完成后生成与文件名相同名字的变量；<br>(5)load(‘featuresX.dat’)<br>加载数据文件的另一种方法；<br>(6)who<br>显示所有变量；<br>(7)whos<br>显示所有变量及其详细信息；<br>(8)clear featuresX<br>删除变量；<br>(9)v = featuresX(1:10)<br>将featuresX中第一列数据的1-10个赋值给变量v；<br>(10)save hello.mat v<br>使变量v保存为一个名为hello.mat的文件，该文件使用二进制压缩的方式存储；<br>(11)clear<br>删除当前工作空间中的所有变量；<br>(12)load hello.mat<br>加载之前生成的文件，加载完成后变量v重新自动出现；<br>(13)save hello.txt v -ascii<br>将变量v保存为一个名为hello.txt的文本文件；</p>
+<h3 id="2-数据获取及移动（A-1-2-3-4-5-6-）"><a href="#2-数据获取及移动（A-1-2-3-4-5-6-）" class="headerlink" title="2.数据获取及移动（A = [1 2 ; 3 4 ; 5 6]）"></a>2.数据获取及移动（A = [1 2 ; 3 4 ; 5 6]）</h3><p>(1) A(3,2)<br>返回矩阵A第三行第二列的元素，ans = 6；<br>(2)A(2,:)<br>返回第二行所有元素；<br>(3)A(:,2)<br>返回第二列所有元素；<br>(4)A([1 3],:)<br>返回第一行和第三行所有元素；<br>(5)A(:,2) = [10;11;12]<br>将矩阵A的第二列重新赋值；<br>(6)A = (A,[100;101;102])<br>为矩阵A增加一列新的向量；<br>(7)A = (A;[1 3])<br>为矩阵A增加一行新的向量；<br>(8)A(:)<br>将矩阵A中的所有元素形成一个列向量；<br>(9)C = [A B]<br>将矩阵A与矩阵B横向合并；<br>(10)C = [A,B]<br>将矩阵A与矩阵B横向合并；<br>(11)C = [A;B]<br>将矩阵A与矩阵B纵向合并；</p>
+<h2 id="五、矩阵数据计算"><a href="#五、矩阵数据计算" class="headerlink" title="五、矩阵数据计算"></a>五、矩阵数据计算</h2><h3 id="1-矩阵基本运算-A-1-2-3-4-5-6-v-1-15-2-0-5"><a href="#1-矩阵基本运算-A-1-2-3-4-5-6-v-1-15-2-0-5" class="headerlink" title="1.矩阵基本运算(A  = [1 2 ;3 4;5 6],v = [1 15 2 0.5])"></a>1.矩阵基本运算(A  = [1 2 ;3 4;5 6],v = [1 15 2 0.5])</h3><p>(1)A <em> B<br>矩阵乘法，按照正常的矩阵乘法流程运算，运算结果是线性代数矩阵相乘结果；<br>(2)A .</em> B<br>矩阵A和矩阵B的各项分别相乘，必须是同型矩阵才可以相乘，点号通常用于表示元素之间的运算；<br>(3)A .^ 2<br>矩阵A中的每一个元素都做乘方2的运算；<br>(4)1 ./ A<br>矩阵A中的每一个元素都取倒数；<br>(5)log(A)<br>矩阵A中的每一个元素取log值；<br>(6)exp(A)<br>以e为底数，A中元素为指数的幂运算，结果仍为矩阵；<br>(7)abs(A)<br>将矩阵A中的每一个元素都取其绝对值，结果仍为矩阵；<br>(8)-A<br>将矩阵中的每一个元素都取其相反数，结果仍为矩阵；<br>(9)v + ones(length(v),1)<br>将v中的每一个元素都加1；<br>(10)v + 1<br>将v中的每一个元素都加1；<br>(11)A’<br>A的转置；<br>(12)A&lt;3<br>将矩阵A中的每一个元素和3比较如果满足小于3的条件置一，否则置零，最后形成一个和A同型的矩阵，<br>矩阵的每个元素是0或者1；</p>
+<h3 id="2-矩阵运算中的部分重要函数-A-magic-4"><a href="#2-矩阵运算中的部分重要函数-A-magic-4" class="headerlink" title="2.矩阵运算中的部分重要函数(A=magic(4))"></a>2.矩阵运算中的部分重要函数(A=magic(4))</h3><p>(1)magic(4)<br>生成一个幻方矩阵，幻方矩阵的特点的特点是每一行、每一列和对角线上的元素加起来数值相等；<br>(2)max函数<br>a.[val,ind] = max(A)<br>val返回每一列中最大的元素值，并组成一个行向量，ind返回最大元素值的索引值，并组成一个行向量；<br>b.max(A,[],1)<br>返回每一列中的最大元素值，并组成一个行向量；<br>c.max(A,[],2)<br>返回每一行中的最大元素值，并组成一个列向量；<br>d.val = max(A)<br>将val赋值为每一列最大值组成的行向量；<br>e.max(max(A))<br>返回矩阵中的最大值；<br>f.max(A(:))<br>先将矩阵A中的所有元素转为列向量之后取最大值，也是起到取矩阵最大值的效果；<br>(3)find(A&lt;3)<br>返回矩阵A 中元素值小于3的索引，产生顺序为按照列进行，结果为一个列向量；<br>(4)[r,c] = find(A&lt;=7)<br>查找矩阵A 中小于等于7的所有元素的索引，r为行索引，c为列索引，查找顺序按照列进行；<br>(5)sum函数<br>a.sum(A)<br>将矩阵A中每一列的元素值求和，返回求和值组成的一个行向量，向量维度和A的列数相等；<br>b.sum(A,1)<br>将矩阵A中每一列的元素值求和，返回求和值组成的一个行向量，向量维度和A的列数相等；<br>c.sum(A,2)<br>将矩阵A中每一行的元素值求和，返回求和值组成的一个列向量，向量维度和A的行数相等；<br>d.sum(sum(A .<em> eye(4)))<br>返回矩阵A正对角线元素之和；<br>e.sum(sum(A .</em>flipud(eye(4))))<br>返回矩阵A反对角线元素之和；<br>(6)flipud(A)<br>使矩阵A垂直翻转，即最后一行变成第一行，倒数第二行变成第二行，倒数第三行变成第三行，以此类推；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junyu Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊余的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-    </div>
-    <div class="copyright">
-        <p class="footer-entry">©2017 Yelog</p>
-<p class="footer-entry">Buit with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/06/hello-world/" itemprop="url">Hello World</a></h1>
+        
 
-    </div>
-    <div class="full-toc">
-        <button class="full"><span class="min "></span></button>
-<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
-<div class="post-toc"><span class="post-toc-title">目录</span>
-    <div class="post-toc-content">
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-06T21:53:01+08:00">
+                2018-07-06
+              </time>
+            
 
-    </div>
-</div>
-<a class="" id="rocket" href="javascript:void(0)"></a>
-    </div>
-</div>
-<div class="acParent"></div>
+            
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
     </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Junyu Zhang</p>
+              <p class="site-description motion-element" itemprop="description">我的个人学习笔记和技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyu Zhang</span>
+
+  
 </div>
 
-</body>
-<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 
-<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
-<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-<script src="/js/script.js"></script>
-<script>
-    var img_resize = 'photoSwipe';
-    /*作者、标签的自动补全*/
-    $(function () {
-        $('.search').AutoComplete({
-            'data': [],
-            'itemHeight': 20,
-            'width': 418
-        }).AutoComplete('show');
-    })
-    function initArticle() {
-        /*渲染对应的表格样式*/
-        
-            $(".post .pjax table").addClass("green_title");
-        
 
-        /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
-        
 
-        /*高亮代码块行号*/
-        
-        $('pre code').each(function(){
-            var lines = $(this).text().split('\n').length - 1;
-            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
-            $(this).addClass('has-numbering')
-                    .parent()
-                    .append($numbering);
-            for(i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        
+  <span class="post-meta-divider">|</span>
 
-        /*访问数量*/
-        
-        $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
-        
 
-        /*代码高亮，行号对齐*/
-        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
 
         
 
-        // PhotoSwipe
-        $('article').each(function(i){
-            $(this).find('img').each(function(){
-                if ($(this).closest('figure').hasClass('article-gallery-img')) {
-                    return;
-                }
-                var alt = this.alt;
-                $(this)
-                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
-                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
-                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
-            });
-        });
-
-        var pswpElement = document.querySelectorAll('.pswp')[0];
-        if (pswpElement) {
-            var gallerySelector = '.article-gallery, article';
-
-            var initPhotoSwipeFromDOM = function(gallerySelector) {
-
-                // parse slide data (url, title, size ...) from DOM elements
-                // (children of gallerySelector)
-                var parseThumbnailElements = function(el) {
-                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
-                        numNodes = thumbElements.length,
-                        items = [],
-                        figureEl,
-                        linkEl,
-                        size,
-                        imgEl,
-                        item;
-
-                    for (var i = 0; i < numNodes; i++) {
-
-                        figureEl = thumbElements[i]; // <figure> element
-
-                        // include only element nodes
-                        if (figureEl.nodeType !== 1) {
-                            continue;
-                        }
-
-                        linkEl = figureEl.children[0]; // <a> element
-                        imgEl = linkEl.children[0]; // <img>
-
-                        size = linkEl.getAttribute('data-size');
-                        size = size && size.split('x');
-
-                        // create slide object
-                        item = {
-                            src: linkEl.getAttribute('href'),
-                            w: size && parseInt(size[0], 10) || imgEl.width,
-                            h: size && parseInt(size[1], 10) || imgEl.height
-                        };
-
-                        if (figureEl.children.length > 1) {
-                            // <figcaption> content
-                            item.title = figureEl.children[1].innerHTML;
-                        }
-
-                        if (linkEl.children.length > 0) {
-                            // <img> thumbnail element, retrieving thumbnail url
-                            item.msrc = linkEl.children[0].getAttribute('src');
-                        }
-
-                        item.el = figureEl; // save link to element for getThumbBoundsFn
-                        items.push(item);
-                    }
-
-                    return items;
-                };
-
-                // find nearest parent element
-                var closest = function closest(el, fn) {
-                    return el && (fn(el) ? el : closest(el.parentNode, fn));
-                };
-
-                // triggers when user clicks on thumbnail
-                var onThumbnailsClick = function(e) {
-                    e = e || window.event;
-
-                    var eTarget = e.target || e.srcElement;
-
-                    // find root element of slide
-                    var clickedListItem = closest(eTarget, function(el) {
-                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-                    });
-
-                    if (!clickedListItem) {
-                        return;
-                    }
-
-                    if (e.preventDefault) {
-                        e.preventDefault();
-                    } else {
-                        e.returnValue = false;
-                    }
-
-                    // find index of clicked item by looping through all child nodes
-                    // alternatively, you may define index via data- attribute
-                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
-                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
-                        numChildNodes = childNodes.length,
-                        nodeIndex = 0,
-                        index;
-
-                    for (var i = 0; i < numChildNodes; i++) {
-                        if (childNodes[i].nodeType !== 1) {
-                            continue;
-                        }
-
-                        if (childNodes[i] === clickedListItem) {
-                            index = nodeIndex;
-                            break;
-                        }
-                        nodeIndex++;
-                    }
 
 
 
-                    if (index >= 0) {
-                        // open PhotoSwipe if valid index found
-                        openPhotoSwipe(index, clickedGallery);
-                    }
-                    return false;
-                };
 
-                // parse picture index and gallery index from URL (#&pid=1&gid=2)
-                var photoswipeParseHash = function() {
-                    var hash = window.location.hash.substring(1),
-                        params = {};
 
-                    if (hash.length < 5) {
-                        return params;
-                    }
 
-                    var vars = hash.split('&');
-                    for (var i = 0; i < vars.length; i++) {
-                        if (!vars[i]) {
-                            continue;
-                        }
-                        var pair = vars[i].split('=');
-                        if (pair.length < 2) {
-                            continue;
-                        }
-                        params[pair[0]] = pair[1];
-                    }
-
-                    if (params.gid) {
-                        params.gid = parseInt(params.gid, 10);
-                    }
-
-                    return params;
-                };
-
-                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-                    var pswpElement = document.querySelectorAll('.pswp')[0],
-                        gallery,
-                        options,
-                        items;
-
-                    items = parseThumbnailElements(galleryElement);
-
-                    // define options (if needed)
-                    options = {
-
-                        // define gallery index (for URL)
-                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-                        getThumbBoundsFn: function(index) {
-                            // See Options -> getThumbBoundsFn section of documentation for more info
-                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                                rect = thumbnail.getBoundingClientRect();
-
-                            return {
-                                x: rect.left,
-                                y: rect.top + pageYScroll,
-                                w: rect.width
-                            };
-                        }
-                    };
-
-                    // PhotoSwipe opened from URL
-                    if (fromURL) {
-                        if (options.galleryPIDs) {
-                            // parse real index when custom PIDs are used
-                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                            for (var j = 0; j < items.length; j++) {
-                                if (items[j].pid == index) {
-                                    options.index = j;
-                                    break;
-                                }
-                            }
-                        } else {
-                            // in URL indexes start from 1
-                            options.index = parseInt(index, 10) - 1;
-                        }
-                    } else {
-                        options.index = parseInt(index, 10);
-                    }
-
-                    // exit if index not found
-                    if (isNaN(options.index)) {
-                        return;
-                    }
-
-                    if (disableAnimation) {
-                        options.showAnimationDuration = 0;
-                    }
-
-                    // Pass data to PhotoSwipe and initialize it
-                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-
-                    gallery.listen('imageLoadComplete', function(index, item) {
-                        var linkEl = item.el.children[0];
-                        var img = item.container.children[0];
-                        if (!linkEl.getAttribute('data-size')) {
-                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
-                            item.w = img.naturalWidth;
-                            item.h = img.naturalHeight;
-                            gallery.invalidateCurrItems();
-                            gallery.updateSize(true);
-                        }
-                    });
-
-                    gallery.init();
-                };
-
-                // loop through all gallery elements and bind events
-                var galleryElements = document.querySelectorAll(gallerySelector);
-
-                for (var i = 0, l = galleryElements.length; i < l; i++) {
-                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-                    galleryElements[i].onclick = onThumbnailsClick;
-                }
-
-                // Parse URL and open gallery if it contains #&pid=3&gid=1
-                var hashData = photoswipeParseHash();
-                if (hashData.pid && hashData.gid) {
-                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
-                }
-            };
-
-            // execute above function
-            initPhotoSwipeFromDOM(gallerySelector);
-        }
         
-    }
+      </div>
+    </footer>
 
-    /*打赏页面隐藏与展示*/
     
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<!--加入行号的高亮代码块样式-->
-
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 2px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    .pre-numbering{
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 0.5em 3px 0.7em 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: #AAA;
-        background-color: #fafafa;
-    }
-</style>
-
-<!--自定义样式设置-->
-<style>
-    
-    .nav-right nav a.hover, #local-search-result a.hover{
-        background-color: #e2e0e0;
-    }
-    
-    
-
-    /*列表样式*/
-    
-    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
-        border: #e2dede solid 2px;
-        border-radius: 10px;
-        padding: 10px 32px 10px 56px;
-    }
-    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    
-
-    /*引用块样式*/
-    
-    .post .pjax article blockquote {
-        padding: 10px 20px;
-        background-color: white;
-        border: none;
-        border-left: 4px solid #42b983;
-        border-right: 4px solid #42b983;
-        border-radius: 10px;
-    }
-    
-
-    /*文章列表背景图*/
-    
-    .nav-right:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        background: url("http://oncj6b2vl.bkt.clouddn.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg");
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        -ms-background-size: cover;
-        -o-background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        background-size: cover;
-    }
-    
-</style>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe.
-         It's a separate element, as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
 
 
 
 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
