@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ijunyu.top/"/>
-  <updated>2018-07-21T05:38:22.407Z</updated>
+  <updated>2018-07-20T14:44:11.022Z</updated>
   <id>http://blog.ijunyu.top/</id>
   
   <author>
@@ -15,58 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://blog.ijunyu.top/2018/07/21/test/"/>
-    <id>http://blog.ijunyu.top/2018/07/21/test/</id>
-    <published>2018-07-21T05:36:40.000Z</published>
-    <updated>2018-07-21T05:38:22.407Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是一个测试</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是一个测试&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="博客" scheme="http://blog.ijunyu.top/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="test" scheme="http://blog.ijunyu.top/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>classification</title>
-    <link href="http://blog.ijunyu.top/2018/07/21/classification/"/>
-    <id>http://blog.ijunyu.top/2018/07/21/classification/</id>
-    <published>2018-07-21T05:27:52.000Z</published>
-    <updated>2018-07-21T05:32:42.306Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是一个测试</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是一个测试&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://blog.ijunyu.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="hexo" scheme="http://blog.ijunyu.top/tags/hexo/"/>
-    
-  </entry>
   
   <entry>
     <title>Octive基本操作</title>
