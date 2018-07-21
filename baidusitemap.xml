@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/20/Octive/</loc>
+    <lastmod>2018-07-20T14:44:11.022Z</lastmod>
+    <data>
+        <display>
+        <title>Octive基本操作</title>
+        <pubTime>2018-07-20T11:48:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/06/hello-world/</loc>
+    <lastmod>2018-07-06T13:53:01.050Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-07-06T13:53:01.050Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
