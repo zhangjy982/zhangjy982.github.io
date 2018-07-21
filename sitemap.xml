@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.ijunyu.top/classification/index.html</loc>
+    <loc>http://blog.ijunyu.top/categories/index.html</loc>
     
-    <lastmod>2018-07-21T05:44:51.291Z</lastmod>
+    <lastmod>2018-07-21T06:00:27.285Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/07/21/test/</loc>
+    
+    <lastmod>2018-07-21T05:57:12.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/test/index.html</loc>
+    
+    <lastmod>2018-07-21T05:52:14.831Z</lastmod>
     
   </url>
   
