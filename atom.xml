@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ijunyu.top/"/>
-  <updated>2018-07-21T05:57:12.768Z</updated>
+  <updated>2018-07-22T07:09:09.169Z</updated>
   <id>http://blog.ijunyu.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>buildingMyBlogs</title>
+    <link href="http://blog.ijunyu.top/2018/07/22/buildingMyBlogs/"/>
+    <id>http://blog.ijunyu.top/2018/07/22/buildingMyBlogs/</id>
+    <published>2018-07-22T03:36:21.000Z</published>
+    <updated>2018-07-22T07:09:09.169Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="利用Hexo搭建个人博客"><a href="#利用Hexo搭建个人博客" class="headerlink" title="利用Hexo搭建个人博客"></a>利用Hexo搭建个人博客</h1><p>Hexo是高效的静态站点生成框架，基于Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo在速度上也有很大优势。</p><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><h3 id="1-使用工具"><a href="#1-使用工具" class="headerlink" title="1.使用工具"></a>1.使用工具</h3><ul><li>GitHub</li><li>Node.js</li><li>Hexo<h3 id="2-本文使用环境"><a href="#2-本文使用环境" class="headerlink" title="2.本文使用环境"></a>2.本文使用环境</h3></li><li>Windows 10 version 1803</li><li>Git for Windows version 2.17.0</li><li>Node.js version 10.5.0</li><li><p>Hexo version 3.7.1<br>###3.环境搭建 ###</p><h4 id="1-搭建Node-js环境"><a href="#1-搭建Node-js环境" class="headerlink" title="(1).搭建Node.js环境"></a>(1).搭建Node.js环境</h4><p>Hexo基于Node.js，Node.js是一个基于Chrome JavaScript运行时建立的平台， 用于方便地搭建响应速度快、易于扩展的网络应用。Node.js 使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用，所以先搭建Node.js环境。<br><a href="http://nodejs.cn/download" target="_blank" rel="noopener">Node.js下载地址</a><br><img src="https://i.imgur.com/es0Yi0k.png" alt=""><br>可以根据自己的需要下载对应的版本，Windows系统下载扩展名为.msi的文件安装即可。<br>安装完成后在命令行下输入  <code>node -v</code>，如果出现对应的版本号则说明安装成功。<br>新版的nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 <code>npm -v</code> 来测试是否成功安装，出现版本提示表示安装成功:  </p><h4 id="2-安装Git版本工具"><a href="#2-安装Git版本工具" class="headerlink" title="(2).安装Git版本工具"></a>(2).安装Git版本工具</h4><p>Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理，使用Git可以帮助我们把本地的网页和文章等内容提交到Gihub上，实现同步。<br><a href="https://git-scm.com/download/" target="_blank" rel="noopener">Git下载地址</a><br>下载完成后按默认配置安装即可，安装完成后命令行输入 <code>git --version</code>,如果出现对应的版本号则说明安装成功。<br>安装成功后可以在开始菜单中找到名为git bash的应用图标，此为git的命令行形式，关于hexo的操作今后无特殊说明都是在gitbash下进行。 </p><h4 id="3-注册GitHub账号"><a href="#3-注册GitHub账号" class="headerlink" title="(3).注册GitHub账号"></a>(3).注册GitHub账号</h4><p>GitHub是一个面向开源及私有软件项目的托管平台，因为只支持git作为唯一的版本库格式进行托管，故名GitHub。这里用到Github，是因为我们需要通过Github得到自己的博客网站域名，而且需要使用gitHub同步我们个人博客的相关文件。<br><a href="https://github.com" target="_blank" rel="noopener">GitHub注册地址</a><br>GitHub为英文网站，可以根据提示进行注册操作，如果有不明白的地方可以百度解决，这里要注意的是用户名作为Git上很重要的标识，起名字的时候一定要选择一个合适的名字,我的用户名是zhangjy982，所以进入我个人GitHub的地址为:https:github.com/zhangjy982,下附链接：<a href="https://github.com/zhangjy982" target="_blank" rel="noopener">张俊余的GitHub</a>。  </p><h4 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="(4).安装hexo"></a>(4).安装hexo</h4><p>前面已经说过，在安装node.js的时候已经将npm集成进去，如果之前测试npm集成成功的话，hexo的安装只需要在gitbash中输入：<br><code>npm install -g hexo</code><br>等待自动完成后，输入<code>hexo version</code>可以查看hexo对应版本以及判断hexo是否安装成功。</p><h2 id="二、搭建博客"><a href="#二、搭建博客" class="headerlink" title="二、搭建博客"></a>二、搭建博客</h2><h3 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h3><p>在前面的准备工作中我们已经注册过GitHub账号，接下来要进行的就是在GitHub中创建博客存储的仓库：<br>第一步，点击新建仓库（new repository）:<br><img src="https://i.imgur.com/1dZ1v7s.png" alt=""><br>第二步，填写仓库信息，这里最重要的是仓库的名字，要和你的用户名一致，名字的格式为：<code>username.github.io</code>，我为了写这个博客重新注册了一个Git账号：zhangjytest，所以我的仓库名字应该为：<code>zhangjytest.github.io</code>，这样的目的是确定访问地址，以后如果不绑定域名，博客的访问地址就是zhangjytest.github.io了，每个GitHub账户只能创建一个直接使用域名访问的仓库：<br><img src="https://i.imgur.com/4iSlMrT.png" alt=""></p><h3 id="2-配置本地gitbash账户信息"><a href="#2-配置本地gitbash账户信息" class="headerlink" title="2.配置本地gitbash账户信息"></a>2.配置本地gitbash账户信息</h3><p>为了可以使本地文件上传到Git，需要在gitbash中进行账户信息配置，配置过程如下：<br>第一步，账户配置，在gitbash下分别输入如下代码：<br><code>git config --global user.name &quot;your name&quot;</code><br><code>git config --global user.email &quot;your email&quot;</code><br><img src="https://i.imgur.com/JY9U7Ft.png" alt=""><br>第二步，创建SSH，在gitbash下输入：<br><code>ssh-keygen -t rsa -C &quot;youremail@example.com</code><br><img src="https://i.imgur.com/GCGsmsZ.png" alt=""><br>执行过程中一直按回车键完成执行，执行完毕后会在”C:\Users\zhangjy982.ssh”（zhangjy982为我个人的用户名）文件夹下生成两个文件，分别为<code>id_rsa</code>和<code>id_rsa.pub</code>，用记事本打开<code>id_rsa.pub</code>文件，复制其中全部内容。<br>第三步，将获取的SSH设置到GitHub中：<br>进入设置页面：<br><img src="https://i.imgur.com/fvGl6ES.png" alt=""><br>在设置中找到SSH and GPG keys中的add SSH，将复制下来的字符串复制到Key中，Title值可以是任意值：<br><img src="https://i.imgur.com/Goc53dv.png" alt=""><br>第四步，在gitbash中验证是否成功：<br><code>ssh -T git@github.com</code><br>如果提示<code>Are you sure you want to continue connecting (yes/no)?</code>，输入yes后如下图所示：<br><img src="https://i.imgur.com/UqTrTAI.png" alt=""><br>此时gitbash的配置也已经完成。</p><h3 id="2-利用hexo写博客"><a href="#2-利用hexo写博客" class="headerlink" title="2.利用hexo写博客"></a>2.利用hexo写博客</h3><p>第一步，安装过程已经在环境搭建步骤中完成。<br>第二步，初始化，在你想要存放本地blog文件的地方新建文件夹MyBlogs（文件名字可任意），比如我的是C：\Users\zhangjy982\MyBlogs,先进入文件夹:<code>cd &quot;C:\Users\zhangjy982\MyBlogs&quot;</code>,<br><img src="https://i.imgur.com/mzqZFRu.png" alt=""><br>然后输入：<code>hexo init</code>,hexo就会自动下载一些到该文件夹，过程可能稍慢，耐心等待，<br><img src="https://i.imgur.com/nrtHsCI.png" alt=""><br>文件夹解释:  </p></li><li><p>node_modules：是依赖包</p></li><li>public：存放的是生成的页面</li><li>scaffolds：命令生成文章等的模板</li><li>source：用命令创建的各种文章</li><li>themes：主题</li><li>_config.yml：整个博客的配置</li><li>db.json：source解析所得到的</li><li>package.json：项目所需模块项目的配置信息  </li></ul><p>第三步，提交到服务器，<code>hexo s</code>命令可以启动本地localhost服务，默认启动4000端口，启动后如图，Ctrl+C可以关闭服务。<br><img src="https://i.imgur.com/OfyqIJI.png" alt=""><br>第四步，打开浏览器，地址栏输入：<code>http://localhost:4000</code>,即可展示默认的博客界面，默认博客已经有一篇helloworld的博客，所以效果是下面这样的，如果你出现了下面这个页面，说明你已经成功了一大半了。<br><img src="https://i.imgur.com/6cvi5IK.png" alt=""><br>第五步，到目前为止，呈现出的网页还是本地的，那么如何上传到GitHub，继而可以通过域名访问呢，很简单，只需要几个简单的命令就可以，我们首先先介绍一下常用的几个命令：<br>(1)<code>hexo g</code><br>此命令可以生成静态页面到public文件夹；<br>(2)<code>hexo d</code><br>此命令可以将静态页面部署到服务器端，进而可以实现域名访问；<br>(3)<code>hexo g -d</code><br>此命令可以完成生成静态页面后部署到服务器的全过程；<br>(4)<code>hexo d -g</code><br>此命令是部署之前预先生成静态文件；<br>(5)<code>hexo clean</code><br>此命令是将之前生成的静态页面删除，适用于更改配置文件之后重新生成静态文件之前的操作，可以把旧的静态文件删除；<br>初次之外，还记得我们之前准备的Github仓库吗，这里就要用到了。<br>首先找到我们的博客仓库，并拷贝仓库地址：<br><img src="https://i.imgur.com/pxZayiF.png" alt=""><br>然后修改本地博客目录的配置，即修改_config.yml文件，修改yml文件的时候需注意utf-8的格式要求，写字板和记事本等软件会改变文件的编码格式，建议使用sublime等工具，修改deploy配置如下：<br><img src="https://i.imgur.com/4mkVMYJ.png" alt=""><br>保存完配置文件之后，随后需要安装部署插件：<code>npm install hexo-deployer-git —save</code><br>最后，在gitbash下直接输入<code>hexo clean</code>可以将博客之前生成的静态页面清楚，然后输入<code>hexo g -d</code>完成博客上传，以实现域名访问，此时的访问域名为<code>zhangjytest.github.io</code> 得到的页面和之前的本地访问页面是一致的。 </p><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>本文主要介绍了hexo搭建个人博客的最基础的过程，至此，已经完成了博客的初步搭建，但是后续还有写新博客，博客主题更改，博客文章分类，博客访问人数统计，博客字数展示，博客阅读时间估计等基本内容，后续的文章中会继续介绍整个过程。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;利用Hexo搭建个人博客&quot;&gt;&lt;a href=&quot;#利用Hexo搭建个人博客&quot; class=&quot;headerlink&quot; title=&quot;利用Hexo搭建个人博客&quot;&gt;&lt;/a&gt;利用Hexo搭建个人博客&lt;/h1&gt;&lt;p&gt;Hexo是高效的静态站点生成框架，基于Node.js。 通过
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://blog.ijunyu.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.ijunyu.top/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>test</title>
