@@ -379,37 +379,15 @@
       
         
           
-            <h1 id="利用Hexo搭建个人博客"><a href="#利用Hexo搭建个人博客" class="headerlink" title="利用Hexo搭建个人博客"></a>利用Hexo搭建个人博客</h1><p>&emsp;&emsp;Hexo是高效的静态站点生成框架，基于Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo在速度上也有很大优势。  </p>
-<h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><h3 id="1-使用工具"><a href="#1-使用工具" class="headerlink" title="1.使用工具"></a>1.使用工具</h3><ul>
-<li>GitHub</li>
-<li>Node.js</li>
-<li>Hexo</li>
-</ul>
-<h3 id="2-本文使用环境"><a href="#2-本文使用环境" class="headerlink" title="2.本文使用环境"></a>2.本文使用环境</h3><ul>
-<li>Windows 10 version 1803</li>
-<li>Git for Windows version 2.17.0</li>
-<li>Node.js version 10.5.0</li>
-<li>Hexo version 3.7.1</li>
-</ul>
-<h3 id="3-环境搭建"><a href="#3-环境搭建" class="headerlink" title="3.环境搭建"></a>3.环境搭建</h3><h4 id="1-搭建Node-js环境"><a href="#1-搭建Node-js环境" class="headerlink" title="(1)搭建Node.js环境"></a>(1)搭建Node.js环境</h4><p>&emsp;&emsp;Hexo基于Node.js，Node.js是一个基于Chrome JavaScript运行时建立的平台， 用于方便地搭建响应速度快、易于扩展的网络应用。Node.js 使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用，所以先搭建Node.js环境。<br><a href="http://nodejs.cn/download" target="_blank" rel="noopener">Node.js下载地址</a><br><img src="https://i.imgur.com/es0Yi0k.png" alt=""><br>&emsp;&emsp;可以根据自己的需要下载对应的版本，Windows系统下载扩展名为.msi的文件安装即可。<br>&emsp;&emsp;安装完成后在命令行下输入  <code>node -v</code>，如果出现对应的版本号则说明安装成功。<br>新版的nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 <code>npm -v</code> 来测试是否成功安装，出现版本提示表示安装成功:  </p>
-<h4 id="2-安装Git版本工具"><a href="#2-安装Git版本工具" class="headerlink" title="(2)安装Git版本工具"></a>(2)安装Git版本工具</h4><p>&emsp;&emsp;Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理，使用Git可以帮助我们把本地的网页和文章等内容提交到Gihub上，实现同步。<br><a href="https://git-scm.com/download/" target="_blank" rel="noopener">Git下载地址</a><br>&emsp;&emsp;下载完成后按默认配置安装即可，安装完成后命令行输入 <code>git --version</code>,如果出现对应的版本号则说明安装成功。<br>&emsp;&emsp;安装成功后可以在开始菜单中找到名为git bash的应用图标，此为git的命令行形式，关于hexo的操作今后无特殊说明都是在gitbash下进行。 </p>
-<h4 id="3-注册GitHub账号"><a href="#3-注册GitHub账号" class="headerlink" title="(3)注册GitHub账号"></a>(3)注册GitHub账号</h4><p>&emsp;&emsp;GitHub是一个面向开源及私有软件项目的托管平台，因为只支持git作为唯一的版本库格式进行托管，故名GitHub。这里用到Github，是因为我们需要通过Github得到自己的博客网站域名，而且需要使用gitHub同步我们个人博客的相关文件。<br><a href="https://github.com" target="_blank" rel="noopener">GitHub注册地址</a><br>&emsp;&emsp;GitHub为英文网站，可以根据提示进行注册操作，如果有不明白的地方可以百度解决，这里要注意的是用户名作为Git上很重要的标识，起名字的时候一定要选择一个合适的名字,我的用户名是zhangjy982，所以进入我个人GitHub的地址为:https:github.com/zhangjy982,下附链接：<a href="https://github.com/zhangjy982" target="_blank" rel="noopener">张俊余的GitHub</a>。  </p>
-<h4 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="(4)安装hexo"></a>(4)安装hexo</h4><p>&emsp;&emsp;前面已经说过，在安装node.js的时候已经将npm集成进去，如果之前测试npm集成成功的话，hexo的安装只需要在gitbash中输入：<br><code>npm install -g hexo</code><br>&emsp;&emsp;等待自动完成后，输入<code>hexo version</code>可以查看hexo对应版本以及判断hexo是否安装成功。</p>
-<h2 id="二、搭建博客"><a href="#二、搭建博客" class="headerlink" title="二、搭建博客"></a>二、搭建博客</h2><h3 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h3><p>&emsp;&emsp;在前面的准备工作中我们已经注册过GitHub账号，接下来要进行的就是在GitHub中创建博客存储的仓库：<br>&emsp;&emsp;第一步，点击新建仓库（new repository）:<br><img src="https://i.imgur.com/1dZ1v7s.png" alt=""><br>&emsp;&emsp;第二步，填写仓库信息，这里最重要的是仓库的名字，要和你的用户名一致，名字的格式为：<code>username.github.io</code>，我为了写这个博客重新注册了一个Git账号：zhangjytest，所以我的仓库名字应该为：<code>zhangjytest.github.io</code>，这样的目的是确定访问地址，以后如果不绑定域名，博客的访问地址就是zhangjytest.github.io了，每个GitHub账户只能创建一个直接使用域名访问的仓库：<br><img src="https://i.imgur.com/4iSlMrT.png" alt=""></p>
-<h3 id="2-配置本地gitbash账户信息"><a href="#2-配置本地gitbash账户信息" class="headerlink" title="2.配置本地gitbash账户信息"></a>2.配置本地gitbash账户信息</h3><p>&emsp;&emsp;为了可以使本地文件上传到Git，需要在gitbash中进行账户信息配置，配置过程如下：<br>&emsp;&emsp;第一步，账户配置，在gitbash下分别输入如下代码：<br><code>git config --global user.name &quot;your name&quot;</code><br><code>git config --global user.email &quot;your email&quot;</code><br><img src="https://i.imgur.com/JY9U7Ft.png" alt=""><br>第二步，创建SSH，在gitbash下输入：<br><code>ssh-keygen -t rsa -C &quot;youremail@example.com</code><br><img src="https://i.imgur.com/GCGsmsZ.png" alt=""><br>&emsp;&emsp;执行过程中一直按回车键完成执行，执行完毕后会在”C:\Users\zhangjy982.ssh”（zhangjy982为我个人的用户名）文件夹下生成两个文件，分别为<code>id_rsa</code>和<code>id_rsa.pub</code>，用记事本打开<code>id_rsa.pub</code>文件，复制其中全部内容。<br>&emsp;&emsp;第三步，将获取的SSH设置到GitHub中：<br>&emsp;&emsp;进入设置页面：<br><img src="https://i.imgur.com/fvGl6ES.png" alt=""><br>&emsp;&emsp;在设置中找到SSH and GPG keys中的add SSH，将复制下来的字符串复制到Key中，Title值可以是任意值：<br><img src="https://i.imgur.com/Goc53dv.png" alt=""><br>&emsp;&emsp;第四步，在gitbash中验证是否成功：<br><code>ssh -T git@github.com</code><br>&emsp;&emsp;如果提示<code>Are you sure you want to continue connecting (yes/no)?</code>，输入yes后如下图所示：<br><img src="https://i.imgur.com/UqTrTAI.png" alt=""><br>&emsp;&emsp;此时gitbash的配置也已经完成。</p>
-<h3 id="2-利用hexo写博客"><a href="#2-利用hexo写博客" class="headerlink" title="2.利用hexo写博客"></a>2.利用hexo写博客</h3><p>&emsp;&emsp;第一步，安装过程已经在环境搭建步骤中完成。<br>&emsp;&emsp;第二步，初始化，在你想要存放本地blog文件的地方新建文件夹MyBlogs（文件名字可任意），比如我的是C：\Users\zhangjy982\MyBlogs,先进入文件夹:<code>cd &quot;C:\Users\zhangjy982\MyBlogs&quot;</code>,<br><img src="https://i.imgur.com/mzqZFRu.png" alt=""><br>&emsp;&emsp;然后输入：<code>hexo init</code>,hexo就会自动下载一些到该文件夹，过程可能稍慢，耐心等待，<br><img src="https://i.imgur.com/nrtHsCI.png" alt=""><br>文件夹解释:  </p>
-<ul>
-<li>node_modules：是依赖包</li>
-<li>public：存放的是生成的页面</li>
-<li>scaffolds：命令生成文章等的模板</li>
-<li>source：用命令创建的各种文章</li>
-<li>themes：主题</li>
-<li>_config.yml：整个博客的配置</li>
-<li>db.json：source解析所得到的</li>
-<li>package.json：项目所需模块项目的配置信息<br>&emsp;&emsp;第三步，提交到服务器，<code>hexo s</code>命令可以启动本地localhost服务，默认启动4000端口，启动后如图，Ctrl+C可以关闭服务。<br><img src="https://i.imgur.com/OfyqIJI.png" alt=""><br>&emsp;&emsp;第四步，打开浏览器，地址栏输入：<code>http://localhost:4000</code>,即可展示默认的博客界面，默认博客已经有一篇helloworld的博客，所以效果是下面这样的，如果你出现了下面这个页面，说明你已经成功了一大半了。<br><img src="https://i.imgur.com/6cvi5IK.png" alt=""><br>&emsp;&emsp;第五步，到目前为止，呈现出的网页还是本地的，那么如何上传到GitHub，继而可以通过域名访问呢，很简单，只需要几个简单的命令就可以，我们首先先介绍一下常用的几个命令：<br>(1)<code>hexo g</code><br>此命令可以生成静态页面到public文件夹；<br>(2)<code>hexo d</code><br>此命令可以将静态页面部署到服务器端，进而可以实现域名访问；<br>(3)<code>hexo g -d</code><br>此命令可以完成生成静态页面后部署到服务器的全过程；<br>(4)<code>hexo d -g</code><br>此命令是部署之前预先生成静态文件；<br>(5)<code>hexo clean</code><br>此命令是将之前生成的静态页面删除，适用于更改配置文件之后重新生成静态文件之前的操作，可以把旧的静态文件删除；<br>&emsp;&emsp;除此之外，还记得我们之前准备的Github仓库吗，这里就要用到了。<br>首先找到我们的博客仓库，并拷贝仓库地址：<br><img src="https://i.imgur.com/pxZayiF.png" alt=""><br>&emsp;&emsp;然后修改本地博客目录的配置，即修改_config.yml文件，修改yml文件的时候需注意utf-8的格式要求，写字板和记事本等软件会改变文件的编码格式，建议使用sublime等工具，修改deploy配置如下：<br><img src="https://i.imgur.com/4mkVMYJ.png" alt=""><br>&emsp;&emsp;保存完配置文件之后，随后需要安装部署插件：<code>npm install hexo-deployer-git —save</code><br>最后，在gitbash下直接输入<code>hexo clean</code>可以将博客之前生成的静态页面清楚，然后输入<code>hexo g -d</code>完成博客上传，以实现域名访问，此时的访问域名为<code>zhangjytest.github.io</code> 得到的页面和之前的本地访问页面是一致的。 <h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2>&emsp;&emsp;本文主要介绍了hexo搭建个人博客的最基础的过程，至此，已经完成了博客的初步搭建，但是后续还有写新博客，博客主题更改，博客文章分类，博客访问人数统计，博客字数展示，博客阅读时间估计等基本内容，后续的文章中会继续介绍整个过程。</li>
-</ul>
-
-          
+          利用Hexo搭建个人博客&emsp;&emsp;Hexo是高效的静态站点生成框架，基于Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo在
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/22/buildingMyBlogs/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -558,19 +536,15 @@
       
         
           
-            <h1 id="Octive基本操作"><a href="#Octive基本操作" class="headerlink" title="Octive基本操作"></a>Octive基本操作</h1><h2 id="一、基本运算"><a href="#一、基本运算" class="headerlink" title="一、基本运算"></a>一、基本运算</h2><h3 id="1-基本四则运算"><a href="#1-基本四则运算" class="headerlink" title="1.基本四则运算"></a>1.基本四则运算</h3><p>(1)5+6<br>加法运算，ans = 11；<br>(2)6-9<br>减法运算，ans = -3；<br>(3)65*8<br>乘法运算，ans = 520；<br>(4)23/8<br>除法运算，ans = 2.87500000000000；<br>(5)4^6<br>乘方运算，ans = 4096；<br>(6)sqrt(10)<br>平方根运算，ans = 3.16227766016838；</p>
-<h3 id="2-逻辑运算"><a href="#2-逻辑运算" class="headerlink" title="2.逻辑运算"></a>2.逻辑运算</h3><p>(1)1 == 2<br>判断相等，ans = 0；<br>(2)1 ~=2<br>判断不等，ans = 1；<br>(3)1 &amp;&amp; 0<br>判断逻辑与，ans = 0；<br>(4)1 || 0<br>判断逻辑或，ans = 1；<br>(5)xor(1,0)<br>判断异或，ans = 1；</p>
-<h2 id="二、基本函数"><a href="#二、基本函数" class="headerlink" title="二、基本函数"></a>二、基本函数</h2><p>(1)disp(a)<br>展示变量信息；<br>(2)disp(sprintf(‘2 decimals: %0.2f’,a))：<br>显示字符串变量，其中格式和c类似；<br>(3)PS1(‘&gt;&gt; ‘)<br>更改左边显示样式；<br>(4)format long/short<br>数据格式更改；<br>(5)hist(w)<br>将矩阵表示的分布用直方图显示出来，其中w为服从高斯分布的数据组成的矩阵;<br>(6)hist(w,50)<br>可以指定生成的直方图的方格的数量；</p>
-<h2 id="三、矩阵表示"><a href="#三、矩阵表示" class="headerlink" title="三、矩阵表示"></a>三、矩阵表示</h2><h3 id="1-普通表示"><a href="#1-普通表示" class="headerlink" title="1.普通表示"></a>1.普通表示</h3><p>(1)A = [1 2;3 4;5 6]<br>表示一个3x2的矩阵，分号表示一行；</p>
-<h3 id="2-行向量表示"><a href="#2-行向量表示" class="headerlink" title="2.行向量表示"></a>2.行向量表示</h3><p>(1)V = 1：0.1：2<br>表示从1开始每次增加0.1，最大到2的行向量；<br>(2)V = 1：6<br>表示1 2 3 4 5 6组成的行向量；</p>
-<h3 id="3-特殊函数表示"><a href="#3-特殊函数表示" class="headerlink" title="3.特殊函数表示"></a>3.特殊函数表示</h3><p>(1)W = ones（2，3）<br>表示只包含1的一个2行3列矩阵；<br>(2)W = 2*ones（2，3）<br>表示只包含2的2行3列矩阵；<br>(3)W = rand（1，3）<br>表示包含0-1之间随机小数的1行3列矩阵；<br>(4)W = randn（2，3）<br>表示服从高斯分布，标准差或者方差为1的数据组成的2行3列矩阵；</p>
-<h3 id="4-单位矩阵表示"><a href="#4-单位矩阵表示" class="headerlink" title="4.单位矩阵表示"></a>4.单位矩阵表示</h3><p>(1).E = eye（4）表示生成4x4的单位矩阵；</p>
-<h2 id="四、移动数据"><a href="#四、移动数据" class="headerlink" title="四、移动数据"></a>四、移动数据</h2><h3 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h3><p>(1)size(A)<br>返回矩阵A的各个维度数目的行向量，ans = 3 2；<br>(2)size(A,1)<br>返回矩阵A的第一维数目，ans = 3；<br>(3)size(A,2)<br>返回矩阵A的第二维数目，ans = 2；<br>(4)length(V)<br>返回矩阵的各个维度中的最大值，通常用于返回向量的维度值，ans = 4；<br>(5)load featuresX.dat<br>加载数据文件，加载完成后生成与文件名相同名字的变量；<br>(5)load(‘featuresX.dat’)<br>加载数据文件的另一种方法；<br>(6)who<br>显示所有变量；<br>(7)whos<br>显示所有变量及其详细信息；<br>(8)clear featuresX<br>删除变量；<br>(9)v = featuresX(1:10)<br>将featuresX中第一列数据的1-10个赋值给变量v；<br>(10)save hello.mat v<br>使变量v保存为一个名为hello.mat的文件，该文件使用二进制压缩的方式存储；<br>(11)clear<br>删除当前工作空间中的所有变量；<br>(12)load hello.mat<br>加载之前生成的文件，加载完成后变量v重新自动出现；<br>(13)save hello.txt v -ascii<br>将变量v保存为一个名为hello.txt的文本文件；</p>
-<h3 id="2-数据获取及移动（A-1-2-3-4-5-6-）"><a href="#2-数据获取及移动（A-1-2-3-4-5-6-）" class="headerlink" title="2.数据获取及移动（A = [1 2 ; 3 4 ; 5 6]）"></a>2.数据获取及移动（A = [1 2 ; 3 4 ; 5 6]）</h3><p>(1) A(3,2)<br>返回矩阵A第三行第二列的元素，ans = 6；<br>(2)A(2,:)<br>返回第二行所有元素；<br>(3)A(:,2)<br>返回第二列所有元素；<br>(4)A([1 3],:)<br>返回第一行和第三行所有元素；<br>(5)A(:,2) = [10;11;12]<br>将矩阵A的第二列重新赋值；<br>(6)A = (A,[100;101;102])<br>为矩阵A增加一列新的向量；<br>(7)A = (A;[1 3])<br>为矩阵A增加一行新的向量；<br>(8)A(:)<br>将矩阵A中的所有元素形成一个列向量；<br>(9)C = [A B]<br>将矩阵A与矩阵B横向合并；<br>(10)C = [A,B]<br>将矩阵A与矩阵B横向合并；<br>(11)C = [A;B]<br>将矩阵A与矩阵B纵向合并；</p>
-<h2 id="五、矩阵数据计算"><a href="#五、矩阵数据计算" class="headerlink" title="五、矩阵数据计算"></a>五、矩阵数据计算</h2><h3 id="1-矩阵基本运算-A-1-2-3-4-5-6-v-1-15-2-0-5"><a href="#1-矩阵基本运算-A-1-2-3-4-5-6-v-1-15-2-0-5" class="headerlink" title="1.矩阵基本运算(A  = [1 2 ;3 4;5 6],v = [1 15 2 0.5])"></a>1.矩阵基本运算(A  = [1 2 ;3 4;5 6],v = [1 15 2 0.5])</h3><p>(1)A <em> B<br>矩阵乘法，按照正常的矩阵乘法流程运算，运算结果是线性代数矩阵相乘结果；<br>(2)A .</em> B<br>矩阵A和矩阵B的各项分别相乘，必须是同型矩阵才可以相乘，点号通常用于表示元素之间的运算；<br>(3)A .^ 2<br>矩阵A中的每一个元素都做乘方2的运算；<br>(4)1 ./ A<br>矩阵A中的每一个元素都取倒数；<br>(5)log(A)<br>矩阵A中的每一个元素取log值；<br>(6)exp(A)<br>以e为底数，A中元素为指数的幂运算，结果仍为矩阵；<br>(7)abs(A)<br>将矩阵A中的每一个元素都取其绝对值，结果仍为矩阵；<br>(8)-A<br>将矩阵中的每一个元素都取其相反数，结果仍为矩阵；<br>(9)v + ones(length(v),1)<br>将v中的每一个元素都加1；<br>(10)v + 1<br>将v中的每一个元素都加1；<br>(11)A’<br>A的转置；<br>(12)A&lt;3<br>将矩阵A中的每一个元素和3比较如果满足小于3的条件置一，否则置零，最后形成一个和A同型的矩阵，<br>矩阵的每个元素是0或者1；</p>
-<h3 id="2-矩阵运算中的部分重要函数-A-magic-4"><a href="#2-矩阵运算中的部分重要函数-A-magic-4" class="headerlink" title="2.矩阵运算中的部分重要函数(A=magic(4))"></a>2.矩阵运算中的部分重要函数(A=magic(4))</h3><p>(1)magic(4)<br>生成一个幻方矩阵，幻方矩阵的特点的特点是每一行、每一列和对角线上的元素加起来数值相等；<br>(2)max函数<br>a.[val,ind] = max(A)<br>val返回每一列中最大的元素值，并组成一个行向量，ind返回最大元素值的索引值，并组成一个行向量；<br>b.max(A,[],1)<br>返回每一列中的最大元素值，并组成一个行向量；<br>c.max(A,[],2)<br>返回每一行中的最大元素值，并组成一个列向量；<br>d.val = max(A)<br>将val赋值为每一列最大值组成的行向量；<br>e.max(max(A))<br>返回矩阵中的最大值；<br>f.max(A(:))<br>先将矩阵A中的所有元素转为列向量之后取最大值，也是起到取矩阵最大值的效果；<br>(3)find(A&lt;3)<br>返回矩阵A 中元素值小于3的索引，产生顺序为按照列进行，结果为一个列向量；<br>(4)[r,c] = find(A&lt;=7)<br>查找矩阵A 中小于等于7的所有元素的索引，r为行索引，c为列索引，查找顺序按照列进行；<br>(5)sum函数<br>a.sum(A)<br>将矩阵A中每一列的元素值求和，返回求和值组成的一个行向量，向量维度和A的列数相等；<br>b.sum(A,1)<br>将矩阵A中每一列的元素值求和，返回求和值组成的一个行向量，向量维度和A的列数相等；<br>c.sum(A,2)<br>将矩阵A中每一行的元素值求和，返回求和值组成的一个列向量，向量维度和A的行数相等；<br>d.sum(sum(A .<em> eye(4)))<br>返回矩阵A正对角线元素之和；<br>e.sum(sum(A .</em>flipud(eye(4))))<br>返回矩阵A反对角线元素之和；<br>(6)flipud(A)<br>使矩阵A垂直翻转，即最后一行变成第一行，倒数第二行变成第二行，倒数第三行变成第三行，以此类推；</p>
-
-          
+          Octive基本操作一、基本运算1.基本四则运算(1)5+6加法运算，ans = 11；(2)6-9减法运算，ans = -3；(3)65*8乘法运算，ans = 520；(4)23/8除法运算，ans = 2.87500000000000；(5)4^6乘方运算，ans = 4096；(6)sqrt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/20/Octive/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -719,17 +693,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/06/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
