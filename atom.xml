@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ijunyu.top/"/>
-  <updated>2018-07-22T08:03:59.314Z</updated>
+  <updated>2018-07-26T07:29:02.424Z</updated>
   <id>http://blog.ijunyu.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SummaryOfArgorithms</title>
+    <link href="http://blog.ijunyu.top/2018/07/26/SummaryOfArgorithms/"/>
+    <id>http://blog.ijunyu.top/2018/07/26/SummaryOfArgorithms/</id>
+    <published>2018-07-26T07:27:05.000Z</published>
+    <updated>2018-07-26T07:29:02.424Z</updated>
+    
+    <content type="html"><![CDATA[<p>$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用Hexo搭建个人博客</title>
