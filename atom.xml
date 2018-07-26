@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ijunyu.top/"/>
-  <updated>2018-07-26T07:29:02.424Z</updated>
+  <updated>2018-07-26T10:24:07.554Z</updated>
   <id>http://blog.ijunyu.top/</id>
   
   <author>
@@ -17,24 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SummaryOfArgorithms</title>
+    <title>机器学习初级算法</title>
     <link href="http://blog.ijunyu.top/2018/07/26/SummaryOfArgorithms/"/>
     <id>http://blog.ijunyu.top/2018/07/26/SummaryOfArgorithms/</id>
     <published>2018-07-26T07:27:05.000Z</published>
-    <updated>2018-07-26T07:29:02.424Z</updated>
+    <updated>2018-07-26T10:24:07.554Z</updated>
     
-    <content type="html"><![CDATA[<p>$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、单变量线性回归-Linear-Regression-with-One-Variable"><a href="#一、单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="一、单变量线性回归(Linear Regression with One Variable)"></a>一、单变量线性回归(Linear Regression with One Variable)</h1><h2 id="1-假设函数-Hypothesis"><a href="#1-假设函数-Hypothesis" class="headerlink" title="1.假设函数(Hypothesis):"></a>1.假设函数(Hypothesis):</h2><p>$$ h_\theta(x) = \theta_0 + \theta_1x $$</p><h2 id="2-参数-Parameters"><a href="#2-参数-Parameters" class="headerlink" title="2.参数(Parameters):"></a>2.参数(Parameters):</h2><p>$$ \theta_0,\theta_1 $$</p><h2 id="3-代价函数-Cost-Function"><a href="#3-代价函数-Cost-Function" class="headerlink" title="3.代价函数(Cost Function):"></a>3.代价函数(Cost Function):</h2><p>$$ J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 $$</p><h2 id="4-目标-Goals"><a href="#4-目标-Goals" class="headerlink" title="4.目标(Goals):"></a>4.目标(Goals):</h2><p>$$ minimize_{\theta_0,\theta_1} J(\theta_0,\theta_1)$$</p><h2 id="5-解决算法-Solutions"><a href="#5-解决算法-Solutions" class="headerlink" title="5.解决算法(Solutions):"></a>5.解决算法(Solutions):</h2><h3 id="1-梯度下降算法-Gradient-Descent"><a href="#1-梯度下降算法-Gradient-Descent" class="headerlink" title="(1).梯度下降算法(Gradient Descent)"></a>(1).梯度下降算法(Gradient Descent)</h3><h4 id="a-算法内容"><a href="#a-算法内容" class="headerlink" title="a.算法内容"></a>a.算法内容</h4><p>repeat until convergence{<br>    &emsp;$ \theta_j := \theta_j - \alpha \frac{∂}{∂{\theta_j}}J(\theta_0,\theta_1)$<br>}<br>在这里要注意的问题是更新必须是同步更新，具体解释如下：<br>$temp0 := \theta_0-\alpha\frac{∂}{∂\theta_0}J(\theta_0,\theta_1)$<br>$temp1 := \theta_1-\alpha\frac{∂}{∂\theta_1}J(\theta_0,\theta_1)$<br>$\theta_0 := temp0$<br>$\theta_1 := temp1$</p><h4 id="b-线性回归中的梯度下降算法"><a href="#b-线性回归中的梯度下降算法" class="headerlink" title="b.线性回归中的梯度下降算法"></a>b.线性回归中的梯度下降算法</h4><p>$$ h_\theta(x) = \theta_0 + \theta_1x $$<br>$$ J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 $$<br>$$ \frac{∂}{∂\theta_0}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) $$<br>$$ \frac{∂}{∂\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x^{(i)} $$<br>Gradient descent algorithm:<br>repeat until convergence{<br>    &emsp;$ \frac{∂}{∂\theta_0}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) $<br>    &emsp;$ \frac{∂}{∂\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x^{(i)} $<br>}</p><h1 id="二、多变量线性回归-Linear-Regression-with-Variables"><a href="#二、多变量线性回归-Linear-Regression-with-Variables" class="headerlink" title="二、多变量线性回归(Linear Regression with Variables)"></a>二、多变量线性回归(Linear Regression with Variables)</h1><h2 id="1-假设函数-Hypothesis-1"><a href="#1-假设函数-Hypothesis-1" class="headerlink" title="1.假设函数(Hypothesis):"></a>1.假设函数(Hypothesis):</h2><p>$$ h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + …+\theta_nx_n$$</p><h2 id="2-参数-Parameters-1"><a href="#2-参数-Parameters-1" class="headerlink" title="2.参数(Parameters):"></a>2.参数(Parameters):</h2><p>$$ \theta_0,\theta_1,\theta_2,…,\theta_n $$<br>化为向量形式:$$\overrightarrow{\theta}$$</p><h2 id="3-代价函数-Cost-Function-1"><a href="#3-代价函数-Cost-Function-1" class="headerlink" title="3.代价函数(Cost Function):"></a>3.代价函数(Cost Function):</h2><p>$$J(\theta_0,\theta_1,…\theta_n)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2 $$<br>化为向量形式:<br>$$J(\overrightarrow{\theta})=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2 $$</p><h2 id="4-目标-Goals-1"><a href="#4-目标-Goals-1" class="headerlink" title="4.目标(Goals):"></a>4.目标(Goals):</h2><p>$$ minimize_{\theta_0,\theta_1,…\theta_n} J(\theta_0,\theta_1,…,\theta_n)$$<br>化为向量形式:<br>$$ minimize_{\overrightarrow{\theta}} J(\overrightarrow{\theta})$$</p><h2 id="5-解决算法-Solutions-1"><a href="#5-解决算法-Solutions-1" class="headerlink" title="5.解决算法(Solutions):"></a>5.解决算法(Solutions):</h2><h3 id="1-梯度下降算法-Gradient-Descent-1"><a href="#1-梯度下降算法-Gradient-Descent-1" class="headerlink" title="(1).梯度下降算法(Gradient Descent)"></a>(1).梯度下降算法(Gradient Descent)</h3><p>Gradient descent algorithm:<br>Repeat{<br>&emsp;$\theta_1:= \theta_1-\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x_{j}^{(i)} $<br>&emsp;&emsp;(simultaneously update $\theta_j$ for j=0,1,2,3,…n)<br>}</p><h3 id="2-正规方程-Normal-Equation"><a href="#2-正规方程-Normal-Equation" class="headerlink" title="(2).正规方程(Normal Equation)"></a>(2).正规方程(Normal Equation)</h3><p>m examples($x^{(1)},y^{(1)}$),…,($x^{(m)},y^{(m)}$),n features.<br>$$x^{(i)}=<br>        \begin{pmatrix}<br>        x_{0}^{(i)}\\<br>        x_{1}^{(i)}\\<br>        x_{2}^{(i)}\\<br>        \vdots \\<br>        x_{n}^{(i)}\\<br>        \end{pmatrix}\in R^{n+1}<br>$$<br>令$x^{(i)}_{0}=1,$<br>$$X =<br>        \begin{pmatrix}<br>        (x^{(1)})^T\\<br>        (x^{(2)})^T\\<br>        (x^{(3)})^T\\<br>        \vdots\\<br>        (x^{(m)})^T\\<br>        \end{pmatrix}\in R^{m*(n+1)}<br>$$<br>$$y=<br>        \begin{pmatrix}<br>        y^{(1)} \\<br>        y^{(2)} \\<br>        y^{(3)} \\<br>        \vdots \\<br>        y^{(m)} \\<br>        \end{pmatrix}\in R^{m}<br>$$<br>$$\overrightarrow{\theta} = (X^TX)^{-1}X^Ty$$<br>求出的$\overrightarrow{\theta}$值即为多元线性回归求出的值。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$&lt;/p&gt;
-
+        &lt;h1 id=&quot;一、单变量线性回归-Linear-Regression-with-One-Variable&quot;&gt;&lt;a href=&quot;#一、单变量线性回归-Linear-Regression-with-One-Variable&quot; class=&quot;headerlink&quot; title=&quot;一、
       
     
     </summary>
     
+    
+      <category term="MachineLearning" scheme="http://blog.ijunyu.top/tags/MachineLearning/"/>
     
   </entry>
   

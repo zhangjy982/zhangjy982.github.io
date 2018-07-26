@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MachineLearning," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$">
-<meta name="keywords" content="计算机">
+<meta name="description" content="一、单变量线性回归(Linear Regression with One Variable)1.假设函数(Hypothesis):$$ h_\theta(x) = \theta_0 + \theta_1x $$ 2.参数(Parameters):$$ \theta_0,\theta_1 $$ 3.代价函数(Cost Function):$$ J(\theta_0,\theta_1) = \frac">
+<meta name="keywords" content="MachineLearning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SummaryOfArgorithms">
+<meta property="og:title" content="机器学习初级算法">
 <meta property="og:url" content="http://blog.ijunyu.top/2018/07/26/SummaryOfArgorithms/index.html">
 <meta property="og:site_name" content="俊余的博客">
-<meta property="og:description" content="$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$">
+<meta property="og:description" content="一、单变量线性回归(Linear Regression with One Variable)1.假设函数(Hypothesis):$$ h_\theta(x) = \theta_0 + \theta_1x $$ 2.参数(Parameters):$$ \theta_0,\theta_1 $$ 3.代价函数(Cost Function):$$ J(\theta_0,\theta_1) = \frac">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-26T07:29:02.424Z">
+<meta property="og:updated_time" content="2018-07-26T10:24:07.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SummaryOfArgorithms">
-<meta name="twitter:description" content="$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$">
+<meta name="twitter:title" content="机器学习初级算法">
+<meta name="twitter:description" content="一、单变量线性回归(Linear Regression with One Variable)1.假设函数(Hypothesis):$$ h_\theta(x) = \theta_0 + \theta_1x $$ 2.参数(Parameters):$$ \theta_0,\theta_1 $$ 3.代价函数(Cost Function):$$ J(\theta_0,\theta_1) = \frac">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>SummaryOfArgorithms | 俊余的博客</title>
+  <title>机器学习初级算法 | 俊余的博客</title>
   
 
 
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SummaryOfArgorithms</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习初级算法</h1>
         
 
         <div class="post-meta">
@@ -321,7 +321,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  13字
+                  530字
                 </span>
               
 
@@ -337,7 +337,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -358,7 +358,18 @@
       
 
       
-        <p>$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$</p>
+        <h1 id="一、单变量线性回归-Linear-Regression-with-One-Variable"><a href="#一、单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="一、单变量线性回归(Linear Regression with One Variable)"></a>一、单变量线性回归(Linear Regression with One Variable)</h1><h2 id="1-假设函数-Hypothesis"><a href="#1-假设函数-Hypothesis" class="headerlink" title="1.假设函数(Hypothesis):"></a>1.假设函数(Hypothesis):</h2><p>$$ h_\theta(x) = \theta_0 + \theta_1x $$</p>
+<h2 id="2-参数-Parameters"><a href="#2-参数-Parameters" class="headerlink" title="2.参数(Parameters):"></a>2.参数(Parameters):</h2><p>$$ \theta_0,\theta_1 $$</p>
+<h2 id="3-代价函数-Cost-Function"><a href="#3-代价函数-Cost-Function" class="headerlink" title="3.代价函数(Cost Function):"></a>3.代价函数(Cost Function):</h2><p>$$ J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 $$</p>
+<h2 id="4-目标-Goals"><a href="#4-目标-Goals" class="headerlink" title="4.目标(Goals):"></a>4.目标(Goals):</h2><p>$$ minimize_{\theta_0,\theta_1} J(\theta_0,\theta_1)$$</p>
+<h2 id="5-解决算法-Solutions"><a href="#5-解决算法-Solutions" class="headerlink" title="5.解决算法(Solutions):"></a>5.解决算法(Solutions):</h2><h3 id="1-梯度下降算法-Gradient-Descent"><a href="#1-梯度下降算法-Gradient-Descent" class="headerlink" title="(1).梯度下降算法(Gradient Descent)"></a>(1).梯度下降算法(Gradient Descent)</h3><h4 id="a-算法内容"><a href="#a-算法内容" class="headerlink" title="a.算法内容"></a>a.算法内容</h4><p>repeat until convergence{<br>    &emsp;$ \theta_j := \theta_j - \alpha \frac{∂}{∂{\theta_j}}J(\theta_0,\theta_1)$<br>}<br>在这里要注意的问题是更新必须是同步更新，具体解释如下：<br>$temp0 := \theta_0-\alpha\frac{∂}{∂\theta_0}J(\theta_0,\theta_1)$<br>$temp1 := \theta_1-\alpha\frac{∂}{∂\theta_1}J(\theta_0,\theta_1)$<br>$\theta_0 := temp0$<br>$\theta_1 := temp1$</p>
+<h4 id="b-线性回归中的梯度下降算法"><a href="#b-线性回归中的梯度下降算法" class="headerlink" title="b.线性回归中的梯度下降算法"></a>b.线性回归中的梯度下降算法</h4><p>$$ h_\theta(x) = \theta_0 + \theta_1x $$<br>$$ J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 $$<br>$$ \frac{∂}{∂\theta_0}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) $$<br>$$ \frac{∂}{∂\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x^{(i)} $$<br>Gradient descent algorithm:<br>repeat until convergence{<br>    &emsp;$ \frac{∂}{∂\theta_0}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) $<br>    &emsp;$ \frac{∂}{∂\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x^{(i)} $<br>}</p>
+<h1 id="二、多变量线性回归-Linear-Regression-with-Variables"><a href="#二、多变量线性回归-Linear-Regression-with-Variables" class="headerlink" title="二、多变量线性回归(Linear Regression with Variables)"></a>二、多变量线性回归(Linear Regression with Variables)</h1><h2 id="1-假设函数-Hypothesis-1"><a href="#1-假设函数-Hypothesis-1" class="headerlink" title="1.假设函数(Hypothesis):"></a>1.假设函数(Hypothesis):</h2><p>$$ h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + …+\theta_nx_n$$</p>
+<h2 id="2-参数-Parameters-1"><a href="#2-参数-Parameters-1" class="headerlink" title="2.参数(Parameters):"></a>2.参数(Parameters):</h2><p>$$ \theta_0,\theta_1,\theta_2,…,\theta_n $$<br>化为向量形式:$$\overrightarrow{\theta}$$</p>
+<h2 id="3-代价函数-Cost-Function-1"><a href="#3-代价函数-Cost-Function-1" class="headerlink" title="3.代价函数(Cost Function):"></a>3.代价函数(Cost Function):</h2><p>$$J(\theta_0,\theta_1,…\theta_n)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2 $$<br>化为向量形式:<br>$$J(\overrightarrow{\theta})=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2 $$</p>
+<h2 id="4-目标-Goals-1"><a href="#4-目标-Goals-1" class="headerlink" title="4.目标(Goals):"></a>4.目标(Goals):</h2><p>$$ minimize_{\theta_0,\theta_1,…\theta_n} J(\theta_0,\theta_1,…,\theta_n)$$<br>化为向量形式:<br>$$ minimize_{\overrightarrow{\theta}} J(\overrightarrow{\theta})$$</p>
+<h2 id="5-解决算法-Solutions-1"><a href="#5-解决算法-Solutions-1" class="headerlink" title="5.解决算法(Solutions):"></a>5.解决算法(Solutions):</h2><h3 id="1-梯度下降算法-Gradient-Descent-1"><a href="#1-梯度下降算法-Gradient-Descent-1" class="headerlink" title="(1).梯度下降算法(Gradient Descent)"></a>(1).梯度下降算法(Gradient Descent)</h3><p>Gradient descent algorithm:<br>Repeat{<br>&emsp;$\theta_1:= \theta_1-\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x_{j}^{(i)} $<br>&emsp;&emsp;(simultaneously update $\theta_j$ for j=0,1,2,3,…n)<br>}</p>
+<h3 id="2-正规方程-Normal-Equation"><a href="#2-正规方程-Normal-Equation" class="headerlink" title="(2).正规方程(Normal Equation)"></a>(2).正规方程(Normal Equation)</h3><p>m examples($x^{(1)},y^{(1)}$),…,($x^{(m)},y^{(m)}$),n features.<br>$$x^{(i)}=<br>        \begin{pmatrix}<br>        x_{0}^{(i)}\\<br>        x_{1}^{(i)}\\<br>        x_{2}^{(i)}\\<br>        \vdots \\<br>        x_{n}^{(i)}\\<br>        \end{pmatrix}\in R^{n+1}<br>$$<br>令$x^{(i)}_{0}=1,$<br>$$X =<br>        \begin{pmatrix}<br>        (x^{(1)})^T\\<br>        (x^{(2)})^T\\<br>        (x^{(3)})^T\\<br>        \vdots\\<br>        (x^{(m)})^T\\<br>        \end{pmatrix}\in R^{m*(n+1)}<br>$$<br>$$y=<br>        \begin{pmatrix}<br>        y^{(1)} \\<br>        y^{(2)} \\<br>        y^{(3)} \\<br>        \vdots \\<br>        y^{(m)} \\<br>        \end{pmatrix}\in R^{m}<br>$$<br>$$\overrightarrow{\theta} = (X^TX)^{-1}X^Ty$$<br>求出的$\overrightarrow{\theta}$值即为多元线性回归求出的值。</p>
 
       
     </div>
@@ -373,6 +384,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MachineLearning/" rel="tag"># MachineLearning</a>
+          
+        </div>
       
 
       
@@ -448,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -486,7 +512,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -556,6 +582,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、单变量线性回归-Linear-Regression-with-One-Variable"><span class="nav-text">一、单变量线性回归(Linear Regression with One Variable)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-假设函数-Hypothesis"><span class="nav-text">1.假设函数(Hypothesis):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-参数-Parameters"><span class="nav-text">2.参数(Parameters):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-代价函数-Cost-Function"><span class="nav-text">3.代价函数(Cost Function):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-目标-Goals"><span class="nav-text">4.目标(Goals):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-解决算法-Solutions"><span class="nav-text">5.解决算法(Solutions):</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-梯度下降算法-Gradient-Descent"><span class="nav-text">(1).梯度下降算法(Gradient Descent)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-算法内容"><span class="nav-text">a.算法内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-线性回归中的梯度下降算法"><span class="nav-text">b.线性回归中的梯度下降算法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、多变量线性回归-Linear-Regression-with-Variables"><span class="nav-text">二、多变量线性回归(Linear Regression with Variables)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-假设函数-Hypothesis-1"><span class="nav-text">1.假设函数(Hypothesis):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-参数-Parameters-1"><span class="nav-text">2.参数(Parameters):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-代价函数-Cost-Function-1"><span class="nav-text">3.代价函数(Cost Function):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-目标-Goals-1"><span class="nav-text">4.目标(Goals):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-解决算法-Solutions-1"><span class="nav-text">5.解决算法(Solutions):</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-梯度下降算法-Gradient-Descent-1"><span class="nav-text">(1).梯度下降算法(Gradient Descent)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-正规方程-Normal-Equation"><span class="nav-text">(2).正规方程(Normal Equation)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -795,6 +837,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
