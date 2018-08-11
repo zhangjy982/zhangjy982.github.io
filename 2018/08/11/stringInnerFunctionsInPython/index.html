@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="s  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    s.capitalize()S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    s.casefo">
+<meta name="description" content="S  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    S.casefold() -&amp;gt; str">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python3.6.5的字符串内建函数">
 <meta property="og:url" content="http://blog.ijunyu.top/2018/08/11/stringInnerFunctionsInPython/index.html">
 <meta property="og:site_name" content="俊余的博客">
-<meta property="og:description" content="s  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    s.capitalize()S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    s.casefo">
+<meta property="og:description" content="S  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    S.casefold() -&amp;gt; str">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-11T07:04:20.663Z">
+<meta property="og:updated_time" content="2018-08-11T07:27:50.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3.6.5的字符串内建函数">
-<meta name="twitter:description" content="s  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    s.capitalize()S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    s.casefo">
+<meta name="twitter:description" content="S  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    S.casefold() -&amp;gt; str">
 
 
 
@@ -343,7 +343,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  336字
+                  475字
                 </span>
               
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2分钟
+                  3分钟
                 </span>
               
             </div>
@@ -380,19 +380,19 @@
       
 
       
-        <p><code>s  = &#39;abcdefghijklmnopqrstuvwxyz&#39;</code>  </p>
+        <p><code>S  = &#39;abcdefghijklmnopqrstuvwxyz&#39;</code>  </p>
 <ol>
-<li><code>s.capitalize()</code><br>S.capitalize() -&gt; str<br>Return a capitalized version of S, i.e. make the first character have upper case and the rest lower case.   </li>
-<li><code>s.casefold()</code><br>S.casefold() -&gt; str<br>Return a version of S suitable for caseless comparisons.  </li>
-<li><code>s.center(width)</code><br>S.center(width[, fillchar]) -&gt; str<br>Return S centered in a string of length width. Padding is done using the specified fill character. (default is a space)  </li>
-<li><code>s.count()</code><br>S.count(sub[, start[, end]]) -&gt; int<br>Return the number of non-overlapping occurrences of substring sub in string S[start:end].  Optional arguments start and end are interpreted as in slice notation.  </li>
-<li><code>s.encode()</code><br>S.encode(encoding=’utf-8’, errors=’strict’) -&gt; bytes<br>Encode S using the codec registered for encoding. Default encoding is ‘utf-8’. errors may be given to set a different error handling scheme. Default is ‘strict’ meaning that encoding errors raise a UnicodeEncodeError. Other possible values are ‘ignore’, ‘replace’ and ‘xmlcharrefreplace’ as well as any other name registered withcodecs.register_error that can handle UnicodeEncodeErrors.  </li>
-<li><code>s.index()</code><br>S.index(sub[, start[, end]]) -&gt; int<br>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].  Optional arguments start and end are interpreted as in slice notation.Raises ValueError when the substring is not found.  </li>
-<li><code>s.endswith()</code></li>
-<li><code>s.expandtabs()</code></li>
-<li><code>s.find()</code></li>
-<li><code>s.format()</code></li>
-<li><code>s.foramt_map()</code></li>
+<li><code>S.capitalize() -&gt; str</code><br>Return a capitalized version of S, i.e. make the first character have upper case and the rest lower case.   </li>
+<li><code>S.casefold() -&gt; str</code><br>Return a version of S suitable for caseless comparisons.  </li>
+<li><code>S.center(width[, fillchar]) -&gt; str</code><br>Return S centered in a string of length width. Padding is done using the specified fill character. (default is a space)  </li>
+<li><code>S.count(sub[, start[, end]]) -&gt; int</code><br>Return the number of non-overlapping occurrences of substring sub in string S[start:end].  Optional arguments start and end are interpreted as in slice notation.  </li>
+<li><code>S.encode(encoding=&#39;utf-8&#39;, errors=&#39;strict&#39;) -&gt; bytes</code><br>Encode S using the codec registered for encoding. Default encoding is ‘utf-8’. errors may be given to set a different error handling scheme. Default is ‘strict’ meaning that encoding errors raise a UnicodeEncodeError. Other possible values are ‘ignore’, ‘replace’ and ‘xmlcharrefreplace’ as well as any other name registered withcodecs.register_error that can handle UnicodeEncodeErrors.  </li>
+<li><code>S.index(sub[, start[, end]]) -&gt; int</code><br>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].  Optional arguments start and end are interpreted as in slice notation.Raises ValueError when the substring is not found.  </li>
+<li><code>S.endswith(suffix[, start[, end]]) -&gt; bool</code><br>Return True if S ends with the specified suffix, False otherwise.With optional start, test S beginning at that position.With optional end, stop comparing S at that position.suffix can also be a tuple of strings to try.  </li>
+<li><code>S.expandtabs(tabsize=8) -&gt; str</code><br>Return a copy of S where all tab characters are expanded using spaces.If tabsize is not given, a tab size of 8 characters is assumed.  </li>
+<li><code>S.find(sub[, start[, end]]) -&gt; int</code><br>Return the lowest index in S where substring sub is found,such that sub is contained within S[start:end].  Optional arguments start and end are interpreted as in slice notation.Return -1 on failure.  </li>
+<li><code>S.format(*args, **kwargs) -&gt; str</code><br>Return a formatted version of S, using substitutions from args and kwargs.The substitutions are identified by braces (‘{‘ and ‘}’).  </li>
+<li><code>S.format_map(mapping) -&gt; str</code><br>Return a formatted version of S, using substitutions from mapping.The substitutions are identified by braces (‘{‘ and ‘}’).  </li>
 <li><code>s.isalnum()</code></li>
 <li><code>s.isalpha()</code></li>
 <li><code>s.isdecimal()</code></li>
