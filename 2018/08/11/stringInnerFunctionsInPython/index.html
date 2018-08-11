@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="s  = ‘abcdefghijklmnopqrstuvwxyz’    s.capitalize() 把字符串的第一个字符大写； s.casefold()">
+<meta name="description" content="s  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    s.capitalize()S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    s.casefo">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python的字符串内建函数">
+<meta property="og:title" content="Python3.6.5的字符串内建函数">
 <meta property="og:url" content="http://blog.ijunyu.top/2018/08/11/stringInnerFunctionsInPython/index.html">
 <meta property="og:site_name" content="俊余的博客">
-<meta property="og:description" content="s  = ‘abcdefghijklmnopqrstuvwxyz’    s.capitalize() 把字符串的第一个字符大写； s.casefold()">
+<meta property="og:description" content="s  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    s.capitalize()S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    s.casefo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-11T06:33:44.851Z">
+<meta property="og:updated_time" content="2018-08-11T07:04:20.663Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python的字符串内建函数">
-<meta name="twitter:description" content="s  = ‘abcdefghijklmnopqrstuvwxyz’    s.capitalize() 把字符串的第一个字符大写； s.casefold()">
+<meta name="twitter:title" content="Python3.6.5的字符串内建函数">
+<meta name="twitter:description" content="s  = &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;    s.capitalize()S.capitalize() -&amp;gt; strReturn a capitalized version of S, i.e. make the first character have upper case and the rest lower case.    s.casefo">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>Python的字符串内建函数 | 俊余的博客</title>
+  <title>Python3.6.5的字符串内建函数 | 俊余的博客</title>
   
 
 
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python的字符串内建函数</h1>
+          <h1 class="post-title" itemprop="name headline">Python3.6.5的字符串内建函数</h1>
         
 
         <div class="post-meta">
@@ -343,7 +343,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  20字
+                  336字
                 </span>
               
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -380,10 +380,52 @@
       
 
       
-        <p>s  = ‘abcdefghijklmnopqrstuvwxyz’  </p>
+        <p><code>s  = &#39;abcdefghijklmnopqrstuvwxyz&#39;</code>  </p>
 <ol>
-<li><code>s.capitalize()</code> 把字符串的第一个字符大写；</li>
-<li><code>s.casefold()</code></li>
+<li><code>s.capitalize()</code><br>S.capitalize() -&gt; str<br>Return a capitalized version of S, i.e. make the first character have upper case and the rest lower case.   </li>
+<li><code>s.casefold()</code><br>S.casefold() -&gt; str<br>Return a version of S suitable for caseless comparisons.  </li>
+<li><code>s.center(width)</code><br>S.center(width[, fillchar]) -&gt; str<br>Return S centered in a string of length width. Padding is done using the specified fill character. (default is a space)  </li>
+<li><code>s.count()</code><br>S.count(sub[, start[, end]]) -&gt; int<br>Return the number of non-overlapping occurrences of substring sub in string S[start:end].  Optional arguments start and end are interpreted as in slice notation.  </li>
+<li><code>s.encode()</code><br>S.encode(encoding=’utf-8’, errors=’strict’) -&gt; bytes<br>Encode S using the codec registered for encoding. Default encoding is ‘utf-8’. errors may be given to set a different error handling scheme. Default is ‘strict’ meaning that encoding errors raise a UnicodeEncodeError. Other possible values are ‘ignore’, ‘replace’ and ‘xmlcharrefreplace’ as well as any other name registered withcodecs.register_error that can handle UnicodeEncodeErrors.  </li>
+<li><code>s.index()</code><br>S.index(sub[, start[, end]]) -&gt; int<br>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].  Optional arguments start and end are interpreted as in slice notation.Raises ValueError when the substring is not found.  </li>
+<li><code>s.endswith()</code></li>
+<li><code>s.expandtabs()</code></li>
+<li><code>s.find()</code></li>
+<li><code>s.format()</code></li>
+<li><code>s.foramt_map()</code></li>
+<li><code>s.isalnum()</code></li>
+<li><code>s.isalpha()</code></li>
+<li><code>s.isdecimal()</code></li>
+<li><code>s.isdigit()</code></li>
+<li><code>s.isidentifier()</code></li>
+<li><code>s.islower()</code></li>
+<li><code>s.isnumeric()</code></li>
+<li><code>s.isprintable()</code></li>
+<li><code>s.isspace()</code></li>
+<li><code>s.istitle()</code></li>
+<li><code>s.isupper()</code></li>
+<li><code>s.join()</code></li>
+<li><code>s.ljust()</code></li>
+<li><code>s.lower()</code></li>
+<li><code>s.lstrip()</code></li>
+<li><code>s.maketrans()</code></li>
+<li><code>s.partition()</code></li>
+<li><code>s.replace()</code></li>
+<li><code>s.rfind()</code></li>
+<li><code>s.rindex()</code></li>
+<li><code>s.rjust()</code></li>
+<li><code>s.rpartition()</code></li>
+<li><code>s.rsplit()</code></li>
+<li><code>s.rstrip()</code></li>
+<li><code>s.split()</code></li>
+<li><code>s.splitlines()</code></li>
+<li><code>s.startswith()</code></li>
+<li><code>s.strip()</code></li>
+<li><code>s.swapcase()</code></li>
+<li><code>s.title()</code></li>
+<li><code>s.translate()</code></li>
+<li><code>s.upper()</code></li>
+<li><code>s.zfill()</code></li>
 </ol>
 
       
