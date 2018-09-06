@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ijunyu.top/"/>
-  <updated>2018-08-11T08:38:25.355Z</updated>
+  <updated>2018-09-06T07:40:14.798Z</updated>
   <id>http://blog.ijunyu.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NeuralNetworks</title>
+    <link href="http://blog.ijunyu.top/2018/09/06/NeuralNetworks/"/>
+    <id>http://blog.ijunyu.top/2018/09/06/NeuralNetworks/</id>
+    <published>2018-09-06T06:40:53.000Z</published>
+    <updated>2018-09-06T07:40:14.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、神经网络定义"><a href="#一、神经网络定义" class="headerlink" title="一、神经网络定义"></a>一、神经网络定义</h1><p>Origins：Algorithms that try to mimic the brain.Was very widely used in 80s and early 90s;popularity diminished in 90s.<br>Recent resurgence:State-of-the-art technique for many applications.</p><h1 id="二、训练神经网络的方法"><a href="#二、训练神经网络的方法" class="headerlink" title="二、训练神经网络的方法"></a>二、训练神经网络的方法</h1><p>Pick a network architecture(vityconnectivity pattern between neurons)<br>picture-01</p><h2 id="1-Randomly-initialize-weights"><a href="#1-Randomly-initialize-weights" class="headerlink" title="1.Randomly initialize weights;"></a>1.Randomly initialize weights;</h2><p>随机初始化权重</p><h2 id="2-Implement-forward-propagation-to-get-h-Theta-x-i-for-any-x-i"><a href="#2-Implement-forward-propagation-to-get-h-Theta-x-i-for-any-x-i" class="headerlink" title="2.Implement forward propagation to get $ h_\Theta(x^{(i)}) $ for any $ x^{(i)}; $"></a>2.Implement forward propagation to get $ h_\Theta(x^{(i)}) $ for any $ x^{(i)}; $</h2><h2 id="3-Implement-code-to-compute-cost-function-J-Theta"><a href="#3-Implement-code-to-compute-cost-function-J-Theta" class="headerlink" title="3.Implement code to compute cost function $J(\Theta)$"></a>3.Implement code to compute cost function $J(\Theta)$</h2><h2 id="4-Implement-backprop-to-compute-partial-derivatives-frac-∂-∂-Theta-jk-l-J-Theta"><a href="#4-Implement-backprop-to-compute-partial-derivatives-frac-∂-∂-Theta-jk-l-J-Theta" class="headerlink" title="4.Implement backprop to compute partial derivatives $\frac{∂}{∂\Theta_{jk}^{(l)}}J(\Theta)$"></a>4.Implement backprop to compute partial derivatives $\frac{∂}{∂\Theta_{jk}^{(l)}}J(\Theta)$</h2><p>for i = 1 : m<br>&nbsp;&nbsp;Perform forward propagation and backpropagation using example($x^{(i)},y^{(i)}$)<br>(Get activations $a^{(l)}$ and delta terms $\delta^{(l)}$ for l = 2,…,L)</p><h2 id="5-Use-gradient-checking-to-compare-frac-∂-∂-Theta-jk-l-J-Theta-compute-using-backpropagation-vs-using-numerical-eatimate-of-gradient-of-J-Theta"><a href="#5-Use-gradient-checking-to-compare-frac-∂-∂-Theta-jk-l-J-Theta-compute-using-backpropagation-vs-using-numerical-eatimate-of-gradient-of-J-Theta" class="headerlink" title="5.Use gradient checking to compare $\frac{∂}{∂\Theta_{jk}^{(l)}}J(\Theta)$ compute using backpropagation vs. using numerical eatimate of gradient of $J(\Theta)$."></a>5.Use gradient checking to compare $\frac{∂}{∂\Theta_{jk}^{(l)}}J(\Theta)$ compute using backpropagation vs. using numerical eatimate of gradient of $J(\Theta)$.</h2><p>Then disable gradient checking code.</p><h2 id="6-Use-gradient-descent-of-advanced-optimization-method-with-backpropagation-to-try-to-minimize-J-Theta-as-a-function-of-parameters-Theta"><a href="#6-Use-gradient-descent-of-advanced-optimization-method-with-backpropagation-to-try-to-minimize-J-Theta-as-a-function-of-parameters-Theta" class="headerlink" title="6.Use gradient descent of advanced optimization method with backpropagation to try to minimize $J(\Theta)$ as a function of parameters $\Theta$"></a>6.Use gradient descent of advanced optimization method with backpropagation to try to minimize $J(\Theta)$ as a function of parameters $\Theta$</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、神经网络定义&quot;&gt;&lt;a href=&quot;#一、神经网络定义&quot; class=&quot;headerlink&quot; title=&quot;一、神经网络定义&quot;&gt;&lt;/a&gt;一、神经网络定义&lt;/h1&gt;&lt;p&gt;Origins：Algorithms that try to mimic the brain
+      
+    
+    </summary>
+    
+    
+      <category term="MachineLearning" scheme="http://blog.ijunyu.top/tags/MachineLearning/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3.6.5的字符串内建函数</title>
