@@ -84,15 +84,15 @@
 <meta name="description" content="&amp;emsp;&amp;emsp;在最近的软件工程作业中用到了将Python脚本转化为exe文件这一过程，网上各种博客介绍了很多，有些东西都不完全，我也是综合了很多种方法最后才实现的，我就把这些整理出来，希望可以帮到大家~ 一、环境和工具 Windows 10 Enterprise 64bit Python 3.6.4 pyinstaller pip 18.0二、准备工作1. pip安装pyinstalle">
 <meta name="keywords" content="Tools">
 <meta property="og:type" content="article">
-<meta property="og:title" content="py2exe">
+<meta property="og:title" content="Python脚本文件(.py)打包为可执行文件(.exe)">
 <meta property="og:url" content="http://blog.ijunyu.top/2018/09/20/py2exe/index.html">
 <meta property="og:site_name" content="俊余的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;在最近的软件工程作业中用到了将Python脚本转化为exe文件这一过程，网上各种博客介绍了很多，有些东西都不完全，我也是综合了很多种方法最后才实现的，我就把这些整理出来，希望可以帮到大家~ 一、环境和工具 Windows 10 Enterprise 64bit Python 3.6.4 pyinstaller pip 18.0二、准备工作1. pip安装pyinstalle">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/IJvOGkN.png">
-<meta property="og:updated_time" content="2018-09-20T06:11:44.876Z">
+<meta property="og:updated_time" content="2018-09-20T06:20:26.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="py2exe">
+<meta name="twitter:title" content="Python脚本文件(.py)打包为可执行文件(.exe)">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;在最近的软件工程作业中用到了将Python脚本转化为exe文件这一过程，网上各种博客介绍了很多，有些东西都不完全，我也是综合了很多种方法最后才实现的，我就把这些整理出来，希望可以帮到大家~ 一、环境和工具 Windows 10 Enterprise 64bit Python 3.6.4 pyinstaller pip 18.0二、准备工作1. pip安装pyinstalle">
 <meta name="twitter:image" content="https://i.imgur.com/IJvOGkN.png">
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>py2exe | 俊余的博客</title>
+  <title>Python脚本文件(.py)打包为可执行文件(.exe) | 俊余的博客</title>
   
 
 
@@ -274,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">py2exe</h1>
+          <h1 class="post-title" itemprop="name headline">Python脚本文件(.py)打包为可执行文件(.exe)</h1>
         
 
         <div class="post-meta">
@@ -368,7 +368,7 @@
 <li>pip 18.0<h1 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h1><h2 id="1-pip安装pyinstaller"><a href="#1-pip安装pyinstaller" class="headerlink" title="1. pip安装pyinstaller"></a>1. pip安装pyinstaller</h2><h3 id="1-Python和pip的使用"><a href="#1-Python和pip的使用" class="headerlink" title="(1).Python和pip的使用"></a>(1).Python和pip的使用</h3>pip类似于linux中的yumy，但它是依赖于Python的，如果你已经成功安装Python相关版本并且配置好环境变量，就可以使用pip进行软件安装。在cmd下输入<code>python</code>如果出现对应的版本等信息，说明是安装成功的；同样，cmd下输入<code>pip</code>如果弹出来很多帮助信息也说明pip是可用的；更多安装相关内容可以百度，这里不赘述。<h3 id="2-安装pyinstaller"><a href="#2-安装pyinstaller" class="headerlink" title="(2).安装pyinstaller"></a>(2).安装pyinstaller</h3>&emsp;&emsp;首先，进入Python安装目录的Scripts文件夹下，如果你忘记了Python的安装位置，可以通过命令行的方式显示安装路径。具体操作为：cmd下输入python进入Python编辑器环境，然后输入代码：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.path</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>我的Python安装路径是：C:\Users\zhang\AppData\Programs\Python\Python36文件夹下，那么我的安装路径查看效果如下图所示：<br><img src="https://i.imgur.com/IJvOGkN.png" alt=""><br>输入：<br><code>cd C:\Users\zhang\AppData\Local\Programs\Python\Python36\Scripts\</code><br>进入Python的Scripts文件夹。<br>&emsp;&emsp;然后，在cmd中输入命令：<br><code>pip.exe install Pyinstaller</code>，<br>接下来会完成pyinstaller的安装,安装完成后在Scripts文件夹中会出现pyinstaller.exe，说明安装成功。<br>&emsp;&emsp;最后，通过命令行的方式实现Python脚本到exe的转换，命令格式为：<br><code>pyinstaller.exe [-parameter] filename</code>，其中[-parameter]共有三个参数，<code>-w</code>参数k可以屏蔽m命令行调试窗口；<code>-F</code>参数可以把脚本打包成一个独立的exe文件,否则是一个带各种dll和依赖文件的文件夹；<code>-p</code>参数可以增加pyinstaller搜索模块的路径，这里我们使用<code>-F</code>参数就可以满足需要。filename参数是要打包的脚本文件的完全路径，比如我的脚本文件wf.py放在<code>C:\Users\zhang\source\repos\wc\wc</code>文件夹下，那我我的filename的值就是：<code>C:\Users\zhang\source\repos\wc\wc\wf.py</code><br>&emsp;&emsp;所以，我要输入的命令就是：<br><code>pyinstaller.exe -F C:\Users\zhang\source\repos\wc\wc\wf.py</code><br>&emsp;&emsp;执行完毕后在Scripts文件下会生成一个dist文件夹，dist文件夹就存放着刚生成的wf.exe文件，至此，py2exe的整个过程就结束了，我们也实现了目标。</p>
+<p>我的Python安装路径是：C:\Users\zhang\AppData\Programs\Python\Python36文件夹下，那么我的安装路径查看效果如下图所示：<br><img src="https://i.imgur.com/IJvOGkN.png" alt=""><br>输入<code>cd C:\Users\zhang\AppData\Local\Programs\Python\Python36\Scripts\</code><br>进入Python的Scripts文件夹。<br>&emsp;&emsp;然后，在cmd中输入命令：<code>pip.exe install Pyinstaller</code>，<br>接下来会完成pyinstaller的安装,安装完成后在Scripts文件夹中会出现pyinstaller.exe，说明安装成功。<br>&emsp;&emsp;最后，通过命令行的方式实现Python脚本到exe的转换，命令格式为：<br><code>pyinstaller.exe [-parameter] filename</code>，其中[-parameter]共有三个参数，<code>-w</code>参数k可以屏蔽m命令行调试窗口；<code>-F</code>参数可以把脚本打包成一个独立的exe文件,否则是一个带各种dll和依赖文件的文件夹；<code>-p</code>参数可以增加pyinstaller搜索模块的路径，这里我们使用<code>-F</code>参数就可以满足需要。filename参数是要打包的脚本文件的完全路径，比如我的脚本文件wf.py放在<code>C:\Users\zhang\source\repos\wc\wc</code>文件夹下，那我我的filename的值就是：<code>C:\Users\zhang\source\repos\wc\wc\wf.py</code><br>&emsp;&emsp;所以，我要输入的命令就是：<code>pyinstaller.exe -F C:\Users\zhang\source\repos\wc\wc\wf.py</code><br>&emsp;&emsp;执行完毕后在Scripts文件下会生成一个dist文件夹，dist文件夹就存放着刚生成的wf.exe文件，至此，py2exe的整个过程就结束了，我们也实现了目标。</p>
 
       
     </div>
@@ -399,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/17/homework/" rel="next" title="homework">
-                <i class="fa fa-chevron-left"></i> homework
+              <a href="/2018/09/17/Thinking/" rel="next" title="Thinking">
+                <i class="fa fa-chevron-left"></i> Thinking
               </a>
             
           </div>

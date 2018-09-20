@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SoftwareEngineering," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="俊余的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1.回想曾经对计算机专业的畅想&amp;emsp;&amp;emsp;选择计算机专业其实也是比较偶然吧，因为是被调剂到软件工程专业的。当时高考成绩不太理想，距离理想的学校差距很大，当时正好山东开始有了平行志愿，前几个都报的有点高了，家里那时候挺想让我当老师的，就让我填个师范学校，其实当时也是为了敷衍一下他们就填了东北师大，也没想到前三个都没过，就被东北师大录了，师范专业分还不够，然后就被调剂到了软件工程。其实之前">
+<meta name="keywords" content="SoftwareEngineering">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thinking">
+<meta property="og:url" content="http://blog.ijunyu.top/2018/09/17/Thinking/index.html">
+<meta property="og:site_name" content="俊余的博客">
+<meta property="og:description" content="1.回想曾经对计算机专业的畅想&amp;emsp;&amp;emsp;选择计算机专业其实也是比较偶然吧，因为是被调剂到软件工程专业的。当时高考成绩不太理想，距离理想的学校差距很大，当时正好山东开始有了平行志愿，前几个都报的有点高了，家里那时候挺想让我当老师的，就让我填个师范学校，其实当时也是为了敷衍一下他们就填了东北师大，也没想到前三个都没过，就被东北师大录了，师范专业分还不够，然后就被调剂到了软件工程。其实之前">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-20T06:22:55.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thinking">
+<meta name="twitter:description" content="1.回想曾经对计算机专业的畅想&amp;emsp;&amp;emsp;选择计算机专业其实也是比较偶然吧，因为是被调剂到软件工程专业的。当时高考成绩不太理想，距离理想的学校差距很大，当时正好山东开始有了平行志愿，前几个都报的有点高了，家里那时候挺想让我当老师的，就让我填个师范学校，其实当时也是为了敷衍一下他们就填了东北师大，也没想到前三个都没过，就被东北师大录了，师范专业分还不够，然后就被调剂到了软件工程。其实之前">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.ijunyu.top/2018/09/17/Thinking/"/>
+
+
+
+
+
+  <title>Thinking | 俊余的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">俊余的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">东北师范大学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ijunyu.top/2018/09/17/Thinking/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junyu Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊余的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Thinking</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-17T02:35:51+08:00">
+                2018-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3,478字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-回想曾经对计算机专业的畅想"><a href="#1-回想曾经对计算机专业的畅想" class="headerlink" title="1.回想曾经对计算机专业的畅想"></a>1.回想曾经对计算机专业的畅想</h2><p>&emsp;&emsp;选择计算机专业其实也是比较偶然吧，因为是被调剂到软件工程专业的。当时高考成绩不太理想，距离理想的学校差距很大，当时正好山东开始有了平行志愿，前几个都报的有点高了，家里那时候挺想让我当老师的，就让我填个师范学校，其实当时也是为了敷衍一下他们就填了东北师大，也没想到前三个都没过，就被东北师大录了，师范专业分还不够，然后就被调剂到了软件工程。其实之前对计算机专业了解的真的很少，基本上仅限于高中学的很少的Basic语言。<br>&emsp;&emsp;之前有段时间特别喜欢刷知乎，所以对轮子哥还是非常欣赏甚至崇拜的（逃，一开始对于计算机的期待大概就是做一个像轮子哥一样的程序员大佬，按他的说法就是没那个难就进了微软，根据自己的兴趣爱好做项目，做编译器，老师推荐的博客里轮子哥的那篇博客之前也在朋友圈里被好多人转发过，我想应该很多人最开始对程序员的一种向往就是轮子哥那种吧。学院的课程是否和期待的一样，我感觉在我心里还是有一个变化的过程的，开始觉得数据结构、C语言、操作系统等课程以后在工程上用的很少，甚至在网站开发上有些东西根本用不到，离自己期待的还有些远，后来才慢慢发现工程代码也不是纯粹的写各种代码，还是要有思想在里面的，后来大三的时候也面试过好多公司，那时候是真的切实的意识到基础课的重要性，我还很清楚的记得第一次面试的时候面试官问了一个关于进程的问题我就只有印象却什么说不出来的窘境，所以那次面试也非常的惨，我估计面试官也还绝望吧。现在回想一下，特别是在看完几个大佬的博客之后，觉得对于现在的我来说，学院的课程基本上应该是符合期待的，这些都是在以后能用得上的，但是遗憾的是当时没有意识到这个问题，所以现在应该再去回顾一下这些基础课，亡羊补牢，为时未晚，共勉吧!<br>&emsp;&emsp;对于现在的我来说，计算机当时是我喜欢的领域，我觉得计算机现在是最能改变人们生活方式的一个行业，本科时候潘老师经常跟我们说，做项目的想法有很多，随时观察身边的事物就不愁项目没有想法，如果觉得生活中有什么事或者什么方式你觉得不方便，就可以去想是不是可以通过编程的方式去解决，如果可以，就进一步去挖掘这个想法的潜在价值，这样一个项目就可以进行下去了。之后做的国创或者科研立项等等都是在生活的基础上进行的，做过店铺排队的系统，也做过商场的服务APP，我觉得这些都是做出来能对周围人的生活产生积极的影响的，我觉得这个行业很有价值，这个价值不单单是自己如果学的好一点的话薪水可能会高，同时也会有一种自豪感，回家的时候可以说你们经常用到的软件的什么功能是我做出来的，我个人觉得是一件非常有意义的事情。包括现在非常火的自动驾驶、医疗专家系统等等都是为了提高人们的生活水平和改变人们传统的生活方式。<br>&emsp;&emsp;计算机自然也是我擅长的领域。在理论方面，我熟悉基本的数据结构，掌握常用的排序、搜索、查找等算法，对操作系统以及计算机网络都有一个清晰明确的认识并对计算机基本组成原理有深入的学习研究。在工程方面，本科阶段我做的是Java开发，也学过初级的软件工程课，从需求分析、代码编写、单元测试、回归测试等过程我也经常完成，Java集合框架、设计模式、多线程、网络编程、垃圾回收机制、Java虚拟机等我也了解其原理，对一些常用Java框架SpringMVC、Mybatis等能够熟练使用，项目开发过程中使用github作为代码托管工具、一个月至少写两篇技术博客等，这都是我通过上课、实践或者网络等方式学习到的专业技能，这些技能可以支撑我完成计算机领域的一些工作，所以计算机现在是我擅长的领域。但是擅长也不是说我对这个领域达到精通的程度，我对自己也有清晰的认识，计算机领域实在是太宽泛了，我只是在我现在处于的这个阶段达到了计算机从业者的基本资格，还有非常多要学习的地方，相信通过今后的学习，可以把自己变得更好。  </p>
+<h2 id="2-作为研究生的我现在具备和欠缺的知识与技能"><a href="#2-作为研究生的我现在具备和欠缺的知识与技能" class="headerlink" title="2.作为研究生的我现在具备和欠缺的知识与技能"></a>2.作为研究生的我现在具备和欠缺的知识与技能</h2><h3 id="（1）我现在具备的知识与技能："><a href="#（1）我现在具备的知识与技能：" class="headerlink" title="（1）我现在具备的知识与技能："></a>（1）我现在具备的知识与技能：</h3><ul>
+<li>计算机基础：<br>通过在考研的过程中对专业主干课的强化，现在对计算机组成原理、数据结构、计算机网络、操作系统的基本内容有较深的理解； </li>
+<li>数学基础：<br>同样是考研过程中留下的宝贵经验和技能，掌握微积分、矩阵、概率统计等计算机中常用的数学技能；</li>
+<li>英语基础：<br>每天坚持在扇贝单词上背单词打卡在英语流利说上阅读英文原文新闻，目前扇贝已打卡584天,流利说打卡39天，阅读六级和研究生考试难度的文章基本没有障碍；</li>
+<li>项目经验：<br>自己做过国创、科研立项等项目，做过的项目包括web、微信服务号开发、微信小程序、安卓开发等多个方向，对Java语言有较深了解；</li>
+<li>自学能力：<br>项目开发方面的东西比如Java、机器学习、Java项目开发等大多数都来自于自学，自学平台包括慕课网、网易云课堂、腾讯课堂、博客园、csdn等网络学习平台；  <h3 id="（2）我现在缺乏的知识与技能"><a href="#（2）我现在缺乏的知识与技能" class="headerlink" title="（2）我现在缺乏的知识与技能"></a>（2）我现在缺乏的知识与技能</h3></li>
+<li>感兴趣领域的知识框架:<br>我现在想从事的方向是机器学习方向，但是只了解梯度下降、逻辑回归等基本算法，对神经网络和一些非监督学习算法理解不够，对深度学习框架等了解太少,对数据挖掘没有清晰的概念，对于数学上一些比较复杂的公示算法不够了解和熟练；</li>
+<li>英文写作能力：<br>英文写作能力相对薄弱，还不能完成英文论文的写作，既缺乏专业词汇的积累也缺乏英文论文结构的整体把握和行文风格；</li>
+<li>项目中的协作能力：<br>本科阶段没有加入工作室锻炼，做的项目大多数是自己在做，国创的时候图省事把工作都自己做了，对工作安排和分工没有清晰的规划能力；<h2 id="3-我选择的努力方向–工程项目"><a href="#3-我选择的努力方向–工程项目" class="headerlink" title="3.我选择的努力方向–工程项目"></a>3.我选择的努力方向–工程项目</h2><h3 id="（1）我的优势："><a href="#（1）我的优势：" class="headerlink" title="（1）我的优势："></a>（1）我的优势：</h3></li>
+<li>兴趣和热情：<br>我对自己选择的方向很有兴趣也有很大的热情去学习相关内容，有动力也能让我可能比其他人有优势，但是，这只是很小的影响因素，读博客的时候看到过这样一句话，觉得很有道理就写下来了，“兴趣和热情只能让你很执着，但并不一定能让你走好这条路，只有你的能力和你的强项才能让你走好这条路。”所以兴趣和热情在其中的影响远不如能力来的重要，而且大多数情况下二者是相辅相成的，接下来就说能力了；</li>
+<li>计算机基础：<br>数据结构和算法在工程中有极为重要的作用，基础可以使我在工程中更加得心应手；</li>
+<li>项目经验：<br>如上文所说的，我虽然在团队协作上存在不足，但是也有一定的项目经验，对项目的流程相对比较了解；</li>
+<li>自学能力和解决问题的能力：<br>做项目是离不开自学能力的，做项目的过程中会遇到各种困难，之前我的解决办法都是博客，个人觉得博客是极好的平台，项目中的功能实现和出现各种bug的时候博客上基本都有解决方案；</li>
+<li>有很多交流渠道：<br>之前毕业的同学或者学长学姐很多已经入职各个互联网公司，可以向他们请教；<h3 id="（2）我的劣势"><a href="#（2）我的劣势" class="headerlink" title="（2）我的劣势"></a>（2）我的劣势</h3></li>
+<li>可能找不到自己想要的环境：<br>经过多方观察和打听，学院里机器学习与数据挖掘方向的导师基本上都是偏向理论，研一好多导师都不会让进入实验室，这对于那么吃GPU的深度学习、计算机视觉等都是障碍，比较担心理论联系实践的这个过程，所以自己也在导师这块一直纠结；</li>
+<li>时间：<br>最近就开始很明显的感受到时间真的非常紧张，研一课程也不少，还得看各种机器学习的大部头、烧脑的数学，我想研一上完就出去实习，所以每天时间都非常紧张，现在真的后悔本科浪费了太多时间在乱七八糟的事情上；  </li>
+<li>心理上的不自信：<br>考研失败后感觉自己少了很多以往的精气神儿，每天走在学院遇到之前的学弟学妹们都很羞愧，每天都在自我否定中浑浑噩噩，有时候也开始拖延，开始拖泥带水，最近虽然有好转，但是还是跟以前差太多；<h3 id="（3）我在本学期的规划"><a href="#（3）我在本学期的规划" class="headerlink" title="（3）我在本学期的规划"></a>（3）我在本学期的规划</h3></li>
+<li>找一个很好的导师：<br>现在已经这个时候了，希望能找到一个研一可以进实验室的导师：</li>
+<li>把数据结构再过两遍：<br>第一遍重新回忆一下知识点，第二遍把算法都用C语言实现一遍，好几篇博客里都这么说，我想应该很有用；</li>
+<li>使用Python：<br>语言很容易学，但是更容易忘，所以边学边敲，自己做一个小项目最好；</li>
+<li>读书：<br>想把博客里推荐的几本书–《编程之美》、《编程珠玑》、《设计模式》、《计算机程序的构造和解释》、《设计模式》等几本书找个时间认真看一遍；</li>
+<li>参加Imagine Cup：<br>找三个队友和一个指导老师做IC，IC这两年的获奖作品基本上是人工智能+医疗+Azure，我有现成的Azure资源可以用，也可以锻炼自己的编程和团队协作能力；</li>
+<li>有机会的话参加Hackthon：<br>已经找了个其他学校的队友，说有比赛就一起整，不过Hackthon一般都在大城市，到时候也希望他们报销差旅费吧（逃；</li>
+<li>把课程学好：<br>目前上的几门课感觉都挺有用的，应该好好学，成绩现在无所谓了，就看自己能收获多少；</li>
+<li>努力发AAAI：<br>认识一个大佬一年能发接近100篇AAAI，我达不到那种程度，量力而行看看能不能先发一篇试试水，之后有了经验再定新目标；<h2 id="4-我对这门课的期待"><a href="#4-我对这门课的期待" class="headerlink" title="4.我对这门课的期待"></a>4.我对这门课的期待</h2>&emsp;&emsp;听了老师的第一堂课，我的期待当然是可以真正把软件工程学会、学懂，本科阶段学习过软件工程这门课，虽然也会有作业，但是没有现在这么正式，没有这么多作业，之前学的比较枯燥，考试之后基本上也忘得差不多，希望通过这种新的学习方式最后能让自己独立或者能带队完成一个整个的项目，对软件工程的各种模型和方法、流程有深入的了解，在面试的时候能从容不迫。<br>&emsp;&emsp;在写这个博客之前对一周用在这门课上的时间还缺乏一个认识，但是我仅仅完成这一篇博客加上之前的材料阅读已经用了235分钟，接近4个小时的时间，这还是作业比较少的情况，保守估计感觉每周最起码要16个小的时间才能完成基本的课程作业，每天150分钟，总共一周150*7=1050分钟，这是我目前根据实际情况作出的判断，可以再根据下周的情况在多一个训练集的情况下再做个计划。<h2 id="5-小结"><a href="#5-小结" class="headerlink" title="5.小结"></a>5.小结</h2>“是骄傲、虚荣、嫉妒和报复，支撑你走到今天。你的成长依赖这些负的能量，而非天生的善良。”看到这句话挺震撼的，就写在这里了，共勉~</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SoftwareEngineering/" rel="tag"># SoftwareEngineering</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/06/NeuralNetworks/" rel="next" title="NeuralNetworks">
+                <i class="fa fa-chevron-left"></i> NeuralNetworks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/20/py2exe/" rel="prev" title="Python脚本文件(.py)打包为可执行文件(.exe)">
+                Python脚本文件(.py)打包为可执行文件(.exe) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODIzNC8xNDc2Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Junyu Zhang</p>
+              <p class="site-description motion-element" itemprop="description">我的个人学习笔记和技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangjy982" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1174299705@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/zjy982" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100011412761977" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.youtube.com/channel/UCUo8LIjuwnoV0oV05wmJiGQ" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/junyu4856" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-回想曾经对计算机专业的畅想"><span class="nav-text">1.回想曾经对计算机专业的畅想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-作为研究生的我现在具备和欠缺的知识与技能"><span class="nav-text">2.作为研究生的我现在具备和欠缺的知识与技能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）我现在具备的知识与技能："><span class="nav-text">（1）我现在具备的知识与技能：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）我现在缺乏的知识与技能"><span class="nav-text">（2）我现在缺乏的知识与技能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-我选择的努力方向–工程项目"><span class="nav-text">3.我选择的努力方向–工程项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）我的优势："><span class="nav-text">（1）我的优势：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）我的劣势"><span class="nav-text">（2）我的劣势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）我在本学期的规划"><span class="nav-text">（3）我在本学期的规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-我对这门课的期待"><span class="nav-text">4.我对这门课的期待</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-小结"><span class="nav-text">5.小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyu Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
