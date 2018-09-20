@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ijunyu.top/2018/07/06/hello-world/</loc>
+    
+    <lastmod>2018-09-20T06:11:56.744Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/09/20/py2exe/</loc>
+    
+    <lastmod>2018-09-20T06:11:44.876Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ijunyu.top/2018/09/17/homework/</loc>
     
     <lastmod>2018-09-16T18:37:27.553Z</lastmod>
@@ -61,13 +75,6 @@
     <loc>http://blog.ijunyu.top/2018/07/20/Octive/</loc>
     
     <lastmod>2018-07-20T14:44:11.022Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ijunyu.top/2018/07/06/hello-world/</loc>
-    
-    <lastmod>2018-07-06T13:53:01.050Z</lastmod>
     
   </url>
   

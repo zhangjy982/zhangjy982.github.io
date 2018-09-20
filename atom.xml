@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ijunyu.top/"/>
-  <updated>2018-09-16T18:37:27.553Z</updated>
+  <updated>2018-09-20T06:11:44.876Z</updated>
   <id>http://blog.ijunyu.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>py2exe</title>
+    <link href="http://blog.ijunyu.top/2018/09/20/py2exe/"/>
+    <id>http://blog.ijunyu.top/2018/09/20/py2exe/</id>
+    <published>2018-09-20T05:14:41.000Z</published>
+    <updated>2018-09-20T06:11:44.876Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;在最近的软件工程作业中用到了将Python脚本转化为exe文件这一过程，网上各种博客介绍了很多，有些东西都不完全，我也是综合了很多种方法最后才实现的，我就把这些整理出来，希望可以帮到大家~</p><h1 id="一、环境和工具"><a href="#一、环境和工具" class="headerlink" title="一、环境和工具"></a>一、环境和工具</h1><ul><li>Windows 10 Enterprise 64bit</li><li>Python 3.6.4</li><li>pyinstaller</li><li>pip 18.0<h1 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h1><h2 id="1-pip安装pyinstaller"><a href="#1-pip安装pyinstaller" class="headerlink" title="1. pip安装pyinstaller"></a>1. pip安装pyinstaller</h2><h3 id="1-Python和pip的使用"><a href="#1-Python和pip的使用" class="headerlink" title="(1).Python和pip的使用"></a>(1).Python和pip的使用</h3>pip类似于linux中的yumy，但它是依赖于Python的，如果你已经成功安装Python相关版本并且配置好环境变量，就可以使用pip进行软件安装。在cmd下输入<code>python</code>如果出现对应的版本等信息，说明是安装成功的；同样，cmd下输入<code>pip</code>如果弹出来很多帮助信息也说明pip是可用的；更多安装相关内容可以百度，这里不赘述。<h3 id="2-安装pyinstaller"><a href="#2-安装pyinstaller" class="headerlink" title="(2).安装pyinstaller"></a>(2).安装pyinstaller</h3>&emsp;&emsp;首先，进入Python安装目录的Scripts文件夹下，如果你忘记了Python的安装位置，可以通过命令行的方式显示安装路径。具体操作为：cmd下输入python进入Python编辑器环境，然后输入代码：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.path</span><br></pre></td></tr></table></figure></li></ul><p>我的Python安装路径是：C:\Users\zhang\AppData\Programs\Python\Python36文件夹下，那么我的安装路径查看效果如下图所示：<br><img src="https://i.imgur.com/IJvOGkN.png" alt=""><br>输入：<br><code>cd C:\Users\zhang\AppData\Local\Programs\Python\Python36\Scripts\</code><br>进入Python的Scripts文件夹。<br>&emsp;&emsp;然后，在cmd中输入命令：<br><code>pip.exe install Pyinstaller</code>，<br>接下来会完成pyinstaller的安装,安装完成后在Scripts文件夹中会出现pyinstaller.exe，说明安装成功。<br>&emsp;&emsp;最后，通过命令行的方式实现Python脚本到exe的转换，命令格式为：<br><code>pyinstaller.exe [-parameter] filename</code>，其中[-parameter]共有三个参数，<code>-w</code>参数k可以屏蔽m命令行调试窗口；<code>-F</code>参数可以把脚本打包成一个独立的exe文件,否则是一个带各种dll和依赖文件的文件夹；<code>-p</code>参数可以增加pyinstaller搜索模块的路径，这里我们使用<code>-F</code>参数就可以满足需要。filename参数是要打包的脚本文件的完全路径，比如我的脚本文件wf.py放在<code>C:\Users\zhang\source\repos\wc\wc</code>文件夹下，那我我的filename的值就是：<code>C:\Users\zhang\source\repos\wc\wc\wf.py</code><br>&emsp;&emsp;所以，我要输入的命令就是：<br><code>pyinstaller.exe -F C:\Users\zhang\source\repos\wc\wc\wf.py</code><br>&emsp;&emsp;执行完毕后在Scripts文件下会生成一个dist文件夹，dist文件夹就存放着刚生成的wf.exe文件，至此，py2exe的整个过程就结束了，我们也实现了目标。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&amp;emsp;&amp;emsp;在最近的软件工程作业中用到了将Python脚本转化为exe文件这一过程，网上各种博客介绍了很多，有些东西都不完全，我也是综合了很多种方法最后才实现的，我就把这些整理出来，希望可以帮到大家~&lt;/p&gt;
+&lt;h1 id=&quot;一、环境和工具&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="Tools" scheme="http://blog.ijunyu.top/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>homework</title>
@@ -163,9 +187,9 @@
     <link href="http://blog.ijunyu.top/2018/07/06/hello-world/"/>
     <id>http://blog.ijunyu.top/2018/07/06/hello-world/</id>
     <published>2018-07-06T13:53:01.050Z</published>
-    <updated>2018-07-06T13:53:01.050Z</updated>
+    <updated>2018-09-20T06:11:56.744Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: [Deployment](<a href="https://hexo.io/docs/deployment" target="_blank" rel="noopener">https://hexo.io/docs/deployment</a></p>]]></content>
     
     <summary type="html">
     
