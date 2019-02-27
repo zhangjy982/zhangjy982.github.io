@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ijunyu.top/2019/02/27/TensorRT-Document/</loc>
+    
+    <lastmod>2019-02-27T11:46:43.930Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/10/05/JilinTour/</loc>
+    
+    <lastmod>2018-10-20T03:05:46.668Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/09/24/WordsFreq/</loc>
+    
+    <lastmod>2018-10-05T08:29:55.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/10/05/PerformanceAnalysis/</loc>
+    
+    <lastmod>2018-10-05T08:29:47.905Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/09/27/BugCount/</loc>
+    
+    <lastmod>2018-10-04T08:56:00.152Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2018/10/03/HowToChangeGitReposity/</loc>
+    
+    <lastmod>2018-10-03T08:10:00.078Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ijunyu.top/2018/09/20/py2exe/</loc>
     
     <lastmod>2018-09-20T06:48:07.397Z</lastmod>

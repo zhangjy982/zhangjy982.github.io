@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="TensorRT," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="俊余的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="TensorRT开发者手册1.什么是TensorRT？TensorRT源程序是一个能提高英伟达GPU（Griphics processing units）推理性能的C++库。它与TensorFlow、Caffe、PyTorch、MXNet等训练框架相辅相成。它更加关注在GPU上快速高效地运行一个已经存在的学习网络，这个学习网络的目标是生成一个结果（在许多地方也称为得分、检测、回归或推理的过程）。">
+<meta name="keywords" content="TensorRT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorRT_Document">
+<meta property="og:url" content="http://blog.ijunyu.top/2019/02/27/TensorRT-Document/index.html">
+<meta property="og:site_name" content="俊余的博客">
+<meta property="og:description" content="TensorRT开发者手册1.什么是TensorRT？TensorRT源程序是一个能提高英伟达GPU（Griphics processing units）推理性能的C++库。它与TensorFlow、Caffe、PyTorch、MXNet等训练框架相辅相成。它更加关注在GPU上快速高效地运行一个已经存在的学习网络，这个学习网络的目标是生成一个结果（在许多地方也称为得分、检测、回归或推理的过程）。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/overview.png">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/whatistrt2.png">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/fit1.png">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/fit.png">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/ibuildilog.PNG">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/createnet.PNG">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/iparser.PNG">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/iengine.PNG">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/serialengine.PNG">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/createcontext.PNG">
+<meta property="og:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/createruntime.PNG">
+<meta property="og:updated_time" content="2019-02-27T11:46:43.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TensorRT_Document">
+<meta name="twitter:description" content="TensorRT开发者手册1.什么是TensorRT？TensorRT源程序是一个能提高英伟达GPU（Griphics processing units）推理性能的C++库。它与TensorFlow、Caffe、PyTorch、MXNet等训练框架相辅相成。它更加关注在GPU上快速高效地运行一个已经存在的学习网络，这个学习网络的目标是生成一个结果（在许多地方也称为得分、检测、回归或推理的过程）。">
+<meta name="twitter:image" content="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/overview.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.ijunyu.top/2019/02/27/TensorRT-Document/"/>
+
+
+
+
+
+  <title>TensorRT_Document | 俊余的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">俊余的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">东北师范大学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ijunyu.top/2019/02/27/TensorRT-Document/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junyu Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊余的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TensorRT_Document</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-27T19:32:19+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  7,348字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  27分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="TensorRT开发者手册"><a href="#TensorRT开发者手册" class="headerlink" title="TensorRT开发者手册"></a>TensorRT开发者手册</h1><h2 id="1-什么是TensorRT？"><a href="#1-什么是TensorRT？" class="headerlink" title="1.什么是TensorRT？"></a>1.什么是TensorRT？</h2><p>TensorRT源程序是一个能提高英伟达GPU（Griphics processing units）推理性能的C++库。它与TensorFlow、Caffe、PyTorch、MXNet等训练框架相辅相成。它更加关注在GPU上快速高效地运行一个已经存在的学习网络，这个学习网络的目标是生成一个结果（在许多地方也称为得分、检测、回归或推理的过程）。</p>
+<p>一些训练框架类似于tensorflow已经集成了TensorRT，所以TensorRT能够被用来加速框架中的推理过程。作为一种选择，TensorRT可以用作用户应用程序中的库。它包含了很多解析器，这些解析器可以从Caffe、ONNX或者tensorflow中解析已经存在的模型，还可以用于以编程方式构建模型的c++和Python api。</p>
+<p><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/overview.png" alt="avatar"><br>图1：TensorRT是用于产品部署的高性能神经网络推理优化器和运行时引擎</p>
+<p>TensorRT通过合并层和优化核选择来优化网络结构，以达到改善延迟、吞吐量、功率效率和内存消耗。如果应用程序指定，TensorRT还将优化网络以降低运行精度，进一步提高性能和减少内存需求。</p>
+<p>下面的图展示了TensorRT被定义为部分高性能推理优化器和部分运行时引擎。它可以接收在这些流行框架上训练的神经网络，优化神经网络计算，生成一个轻量级运行时引擎（你唯一需要部署到你产品环境中的东西）。然后它还会最大化在这些GPU平台上的吞吐量、降低延迟、增强表现。</p>
+<p><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/whatistrt2.png" alt="avatar"><br>图2：TensorRT是一个可编码的推理加速器</p>
+<p>TensorRT API包含了最通用的深度学习层的实现。关于层的更多信息，请参阅<a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#layers" target="_blank" rel="noopener">TensorRT Layers</a>.你也可以使用<a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-api/c_api/classnvinfer1_1_1_i_plugin.html" target="_blank" rel="noopener">C++ Plugin API</a>或者<a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-api/python_api/infer/Plugin/pyPlugin.html" target="_blank" rel="noopener">Python Plugin API</a>来实现不常用或者最新的层，这些层暂时还不被TensorRT所支持。</p>
+<h3 id="1-1-TensorRT的优势"><a href="#1-1-TensorRT的优势" class="headerlink" title="1.1 TensorRT的优势"></a>1.1 TensorRT的优势</h3><p>当神经网络被训练完成后，TensorRT可以压缩、优化这些网络，还可以部署成一个运行环境而不用承担整个框架的总开销。</p>
+<p>TensorRT组合各个层，优化内核选择，还根据指定的精度（FP32、FP16或INT8）执行规范化和优化矩阵转换来改善延迟、吞吐量和效率。</p>
+<p>对于深度学习推理，有5个用于衡量软件的关键指标：  </p>
+<ul>
+<li>吞吐量（Throuthput）：  指定时间区间内的输出量，通常用inference/second 或者samples/second来度量；  </li>
+<li>效率（Efficiency）：单位功率的吞吐量，通常用performance/watt来度量；</li>
+<li>延迟（Latency）：运行推理的时间，通常用ms度量；</li>
+<li>精确度（Accuracy）：训练过的神经网络给出正确结果的能力；</li>
+<li>内存占用（Memory usage）：主机和设备内存决定于所用的神经网络算法需要申请多少内存空间进行推理；  </li>
+</ul>
+<p>使用TensorRT的可选方案包括：</p>
+<ul>
+<li>使用训练框架本身进行推理；</li>
+<li>写一个使用低层库和数学操作的专门用来执行特定网络的自定义应用程序；</li>
+</ul>
+<p>使用训练框架执行推理很容易，但是在给定的额GPU上，与使用推理优化方案相比，性能会低很多。训练框架倾向于实现更加通用的代码，当优化时，优化往往集中在有效的训练上；<br>自定义程序编写可以获得更高的效率，但是对开发人员知识技能要求非常高，而且针对一个GPU的优化无法完全转移到另一个型号不同的GPU上，因而开发成本非常高；<br>而TensorRT通过将API与特定硬件细节的高级抽象结合来解决这些问题，可以提高吞吐量、降低延迟、并尽可能降低内存占用。  </p>
+<h4 id="1-1-1-谁能够从TensorRT中获益？"><a href="#1-1-1-谁能够从TensorRT中获益？" class="headerlink" title="1.1.1 谁能够从TensorRT中获益？"></a>1.1.1 谁能够从TensorRT中获益？</h4><p>TensorRT的目标用户是负责基于新的或现有的深度学习模型构建特征和应用程序，或将模型部署到生产环境中的工程师。这些部署可能部署到数据中心或云中的服务器、嵌入式设备、机器人或车辆中，或将在用户工作站上运行的应用程序软件中。</p>
+<p>TensorRT已经成功地应用于各种场景，包括:</p>
+<ul>
+<li>Robots：公司销售的机器人使用TensorRT运行各种计算机视觉模型，在动态环境中自动引导无人机系统飞行；</li>
+<li>Autonomous Vehicles：TensorRT被用于为NVIDIA驱动产品的计算机视觉提供支持；</li>
+<li>Scientific and Technical Computing：一种流行的技术计算包嵌入TensorRT以支持神经网络模型的高吞吐量执行；</li>
+<li>Deep Learning Training and Deployment Frameworks：TensorRT在几个有名的深度学习框架比如<a href="https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/tensorflow/" target="_blank" rel="noopener">TensorFlow</a>和<a href="https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/mxnet/" target="_blank" rel="noopener">MXNet</a>中都被包含；</li>
+<li>Video Analytics：TensorRT被应用于英伟达的<a href="https://developer.nvidia.com/deepstream-sdk" target="_blank" rel="noopener">DeepStream</a>产品中，为复杂的视频分析提供解决方案；</li>
+<li>Automatic Speech Recognition：TensorRT用于小型桌面设备上的语音识别。该设备支持有限的词汇量，云计算中提供了更大的词汇量语音识别系统。</li>
+</ul>
+<h3 id="1-2-TensorRT适用于哪里？"><a href="#1-2-TensorRT适用于哪里？" class="headerlink" title="1.2 TensorRT适用于哪里？"></a>1.2 TensorRT适用于哪里？</h3><p>通常情况下，开发和部署深度学习模型的工作流经历三个阶段：</p>
+<ul>
+<li>阶段1：训练；</li>
+<li>阶段2：提出部署方案；</li>
+<li>阶段3：执行部署方案；</li>
+</ul>
+<h4 id="阶段1：训练"><a href="#阶段1：训练" class="headerlink" title="阶段1：训练"></a>阶段1：训练</h4><p>在整个训练阶段，数据科学家和开发者根据他们想解决的问题选择精确的输入输出和损失函数。他们还将收集、管理、扩充、甚至可能标记培训、测试和验证数据集。他们会设计网络结构并且训练模型。在训练过程中，他们将监控学习过程，学习过程可能会提供反馈，从而使他们修正损失函数，获取或增加培训数据。在这个流程的最后，他们会验证模型表现并保存模型。训练和验证通常使用Titano或者Tesla datacenter GPU。在这一阶段通常不会用到TensorRT。</p>
+<h4 id="阶段2：提出部署方案"><a href="#阶段2：提出部署方案" class="headerlink" title="阶段2：提出部署方案"></a>阶段2：提出部署方案</h4><p>在第二个阶段，数据科学家和开发人员将从训练过的模型开始，并使用这个训练过的模型创建和验证部署解决方案。把这个阶段分解成几个步骤，如下：</p>
+<p>1.考虑神经网络是如何在它所处的大系统中工作的，并设计和实现一个合适的解决方案，可能包含神经网络的系统的范围非常广泛。例如：</p>
+<ul>
+<li>交通工具中的自动驾驶系统；</li>
+<li>公共场所或公司校园的视频安全系统；</li>
+<li>消费者设备的语音接口；</li>
+<li>工业生产线自动化质量保证系统；</li>
+<li>提供产品推荐的在线零售系统；</li>
+<li>提供娱乐过滤器的消费者web服务；</li>
+</ul>
+<p>决定好你的优先级，考虑到可以实现的不同系统的多样性，在设计和实现部署体系结构时可能需要考虑很多事情：</p>
+<ul>
+<li>你有一个单独的网络还是许多网络？例如，你是否基于一个单一的网络（人脸识别）开发一个特征或系统？你的系统会不会由混合的、附加的或者不同的模型组成？也许是提供最终用户可能提供的集合模型的更通用的工具?</li>
+<li>你使用什么设备或者计算工具来运行网络？是CPU/GPU还是其他，或者二者结合？是不是只有一种类型的GPU？是否需要设计一个应用程序可以运行在不同种类的GPU上？</li>
+<li>数据怎样加载到模型？什么是数据管道？数据是来自相机、传感器还是一系列的文件？</li>
+<li>需要怎样的延迟和吞吐量？</li>
+<li>你能把很多需求进行批处理吗？</li>
+<li>你需要单个网络的多个实例来实现所需的总体系统吞吐量和延迟吗?</li>
+<li>你会如何处理网络输出？</li>
+<li>需要哪些后处理步骤？</li>
+</ul>
+<p>TensorRT提供了一个快速、模块化、紧凑、健壮、可靠的推理引擎，可以支持部署体系结构中的推理需求。</p>
+<p>2.数据科学家和开发者定义完推理解决方案的结构，也就是决定了他们的优先级之后，接下来他们使用TensorRT从已保存的模型中创建一个推理引擎。根据所使用的培训框架和网络体系结构，有许多方法可以做到这一点。通常来说，这意味着你需要拿到训练过的神经网络并且使用ONNX解析器、Caffe解析器或者TensorFlow/UFF解析器将原格式解析为TensorRT支持的格式。如下图：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/fit1.png" alt="avatar"><br>图三：ONNX 工作流 V1</p>
+<p>3.当网络被解析以后，你就需要考虑优化选项——batch size，workspace size，mixed precision。选择并指定这些选项作为TensorRT构建步骤的一部分，在该步骤中，您将实际构建基于网络的优化推理引擎。本指南的后续部分提供了关于工作流这一部分的详细说明和大量示例，将您的模型解析为TensorRT并选择优化参数，如图4所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/fit.png" alt="avatar"><br>图四：TensorRT优化训练过的神经网络模型，以生成可部署的运行时推理引擎。</p>
+<p>4.当你已经使用TensorRT创建好一个推理引擎之后，你会想验证一下推理结果和训练中的结果是否一致。如果你选择了FP32或FP16，那么结果应该非常接近。如果你选择了INT8，那么在训练中获得的准确率和推理准确率之间可能会有一个小的差距。</p>
+<p>5.以序列化格式写出推理引擎，这也称为计划文件。</p>
+<h4 id="阶段三：执行部署方案"><a href="#阶段三：执行部署方案" class="headerlink" title="阶段三：执行部署方案"></a>阶段三：执行部署方案</h4><p>TensorRT库链接到部署的应用程序，该应用程序在需要推理结果时调用库。为了初始化推理引擎，应用程序首先要将模型从计划文件反序列化为推理引擎。</p>
+<p>TensorRT通常情况下是异步使用的，所以，当输入数据到达时，程序调用enqueue函数并传入输入缓冲区和输出缓冲区的指针地址。</p>
+<h3 id="1-3-TensorRT是如何工作的？"><a href="#1-3-TensorRT是如何工作的？" class="headerlink" title="1.3 TensorRT是如何工作的？"></a>1.3 TensorRT是如何工作的？</h3><p>为了优化推理引擎，TensorRT会接收你的网络定义，执行包括特定平台优化在内的优化然后生成推理引擎，这个过程称为构建阶段。构建阶段可能需要相当长的时间，尤其是在嵌入式平台上运行的时候。因此，典型的应用程序将构建一次引擎，然后将其序列化为计划文件供以后使用。</p>
+<p>NOTE:生成的计划文件不能跨平台或TensorRT版本移植。计划是特定于它们所构建的精确GPU模型的(除了平台和TensorRT版本之外)，如果您想在不同的GPU上运行它们，则必须针对特定的GPU重新制定计划。</p>
+<p>构建阶段对层图执行以下优化:</p>
+<ul>
+<li>消除输出未被使用的层；</li>
+<li>融合convolution，bias和ReLU operations；</li>
+<li>聚合具有足够相似参数和相同源张量的operations，例如在GoogleNet v5中初始模块中的1*1卷积；</li>
+<li>通过非拷贝方式将层输出定向到正确的最终地址来合并连接层；</li>
+</ul>
+<p>如有必要，构建过程也可以改变权重的精度。当生成8-bit整数精度的网络时，TensorRT使用一个叫做calibration的进程来决定中间激活的动态范围，并因此确定用于量化的适当缩放因子。  </p>
+<p>另外，构建阶段还在虚拟数据上运行层，以便从其内核目录中选择最快的层，并在适当的情况下执行权重预格式化和内存优化。</p>
+<h3 id="1-4-TensorRT核心API"><a href="#1-4-TensorRT核心API" class="headerlink" title="1.4 TensorRT核心API"></a>1.4 TensorRT核心API</h3><p>TensorRT让开发者们能够import/calibrate/generate and deploy optimized networks。网络结构能直接通过Caffe导入，也可以通过uff或ONNX等格式从其他框架导入。  </p>
+<p>TensorRT核心库中的关键接口是：</p>
+<ul>
+<li>网络定义（Network Definition）：网络定义接口提供了应用程序指定网络定义的方法。可以指定输入输出张量，可以添加层，还有用于配置每种支持的层类型的接口。除了层类型（例如卷积层或循环层）之外，插件层类型还可以使应用程序实现TensorRT本身并不支持的功能。  </li>
+<li>生成器（Builder）：生成器接口允许通过网络定义建立优化引擎。它允许应用程序指定最大批次大小、工作空间大小、最低可接受精度级别、自动调整的校准迭代次数，以及用于INT8量化的接口。</li>
+<li>引擎（Engine)：引擎接口允许应用程序执行推理，支持同步和异步支持、分析、枚举和查询绑定缓冲区信息，即引擎输入和输出。单个引擎可以具有多个执行上下文，允许一组训练参数用于同时执行多个批次。</li>
+</ul>
+<p>同时，TensorRT还提供解析器，用于导入经过训练的网络来创建网络定义：</p>
+<ul>
+<li>Caffe Parser：此解析器可用于解析在BVLV Caffe或NVCaffe中创建的Caffe网络；</li>
+<li>Uff Parser：此解析器用于UFF格式的解析网络；</li>
+<li>ONNX Parser：此解析器可用于解析ONNX模型；</li>
+</ul>
+<h2 id="2-使用C-API与TensorRT一起工作"><a href="#2-使用C-API与TensorRT一起工作" class="headerlink" title="2.使用C++ API与TensorRT一起工作"></a>2.使用C++ API与TensorRT一起工作</h2><p>本章内容：</p>
+<ul>
+<li>从模型中创建TensorRT网络定义；</li>
+<li>调用TensorRT构建器从网络创建优化的运行时引擎；</li>
+<li>序列化和反序列化引擎，以便在运行时快速重新创建它；</li>
+<li>向引擎提供数据以执行推理；</li>
+</ul>
+<h3 id="2-1-在C-中实例化TensorRT对象"><a href="#2-1-在C-中实例化TensorRT对象" class="headerlink" title="2.1 在C++中实例化TensorRT对象"></a>2.1 在C++中实例化TensorRT对象</h3><p>为了运行推理，你需要使用<code>IExecutionContext</code>对象。为了创建一个<code>IExecutionContext</code>对象，你首先需要创建一个<code>iICudaEngine</code>类型的对象（也就是引擎）。<br>引擎可以通过以下两种方法构建：</p>
+<ul>
+<li>从用户模型中的网络定义。在这种情况下，可以选择序列化引擎，并将其保存以供以后使用；</li>
+<li>通过从磁盘读取序列化引擎。在这种情况下，由于绕过了解析模型和创建中间对象的步骤，所以性能更好；</li>
+</ul>
+<p><code>ILogger</code>类型的对象需要全局创建,它被用作TensorRT API的各种方法的参数。下面是一个简单的示例，演示如何创建日志记录器:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span> :</span> <span class="keyword">public</span> ILogger</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">log</span><span class="params">(Severity severity, <span class="keyword">const</span> <span class="keyword">char</span>* msg)</span> override</span></span><br><span class="line"><span class="function">     </span>&#123;</span><br><span class="line">         <span class="comment">// suppress info-level messages</span></span><br><span class="line">         <span class="keyword">if</span> (severity != Severity::kINFO)</span><br><span class="line">             <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; msg &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125; gLogger;</span><br></pre></td></tr></table></figure>
+<p>一个叫做<code>createInferBuilder(gLogger)</code>的全局TensorRT API方法被用作创建<code>iBuilder</code>类型的对象，如图5所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/ibuildilog.PNG" alt="avatar"><br>图五：使用<code>iLogger</code>作为参数创建<code>iBuilder</code>.  </p>
+<p>为<code>iBuilder</code>定义的<code>createNetwork</code>方法用于创建<code>iNetworkDefinition</code>类型的对象,如图6所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/createnet.PNG" alt="avatar"><br>图六：<code>createNetwork()</code>被用来创建网络。  </p>
+<p>其中一个可用的解析器是使用<code>iNetworkDefinition</code>作为输入创建的: </p>
+<ul>
+<li>ONNX: &emsp;<code>parser = nvonnxparser::createParser(*network, gLogger);</code></li>
+<li>NVCaffe: &emsp;<code>ICaffeParser* parser = createCaffeParser();</code></li>
+<li>UFF: &emsp;<code>parser = createUffParser();</code></li>
+</ul>
+<p>调用类型<code>iParser</code>的对象中的<code>parse()</code>方法来读取模型文件并填充TensorRT网络,如图7所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/iparser.PNG" alt="avatar"><br>图七：解析模型文件  </p>
+<p>调用<code>iBuilder</code>的<code>buildCudaEngine()</code>方法来创建<code>iCudaEngine</code>类型的对象,如图8所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/iengine.PNG" alt="avatar"><br>图八：创建TensorRT引擎。  </p>
+<p>可以选择序列化引擎并将其转储到文件中，如图9所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/serialengine.PNG" alt="avatar"><br>图九：创建TensorRT引擎。  </p>
+<p>执行上下文用于执行推理，如图10所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/createcontext.PNG" alt="avatar"><br>图十：创建执行上下文。  </p>
+<p>一个名为<code>createInferRuntime(gLogger)</code>的全局TensorRT API方法用于创建<code>iRuntime</code>类型的对象,如图11所示：<br><img src="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/graphics/createruntime.PNG" alt="avatar"><br>图十一：创建TensorRT runtime  </p>
+<p>更多关于TensorRT的信息请参见<a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-api/c_api/classnvinfer1_1_1_i_runtime.html" target="_blank" rel="noopener">IRuntime class reference</a>。该引擎是通过调用运行时方法<code>deserializeCudaEngine()</code>创建的。对于这两个使用模型，推论的其余部分是相同的。</p>
+<p>尽管可以避免创建CUDA上下文(将为你创建默认上下文)，但这是不可取的。<br>建议在创建运行时或构建器对象之前创建和配置CUDA上下文。</p>
+<p>构建器或运行时将使用与创建线程关联的GPU上下文创建。虽然如果还不存在缺省上下文，将创建它，但是建议在创建运行时或构建器对象之前创建和配置CUDA上下文。</p>
+<h3 id="2-2-用C-创建网络定义"><a href="#2-2-用C-创建网络定义" class="headerlink" title="2.2 用C++创建网络定义"></a>2.2 用C++创建网络定义</h3><p>执行TensorRT推理的第一步是从你的模型创建一个TensorRT网络。实现这一目标最简单的方法就是使用TensorRT parser library，这个库支持下面这些格式模型的序列化：  </p>
+<ul>
+<li><a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#mnist_sample" target="_blank" rel="noopener">sampleMNIST</a>(BVLC和NVCaffe)；</li>
+<li><a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#onnx_mnist_sample" target="_blank" rel="noopener">sampleOnnxMNIST</a>;</li>
+<li><a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#mnist_uff_sample" target="_blank" rel="noopener">sampleUffMNIST</a>(TensorFlow);</li>
+</ul>
+<p>另一个可选的办法是直接使用TensorRT API定义模型。这样的话就要求进行少量的API调用来定义网络图中的每一层，并为模型的训练参数实现你自己的导入机制。</p>
+<p>在另一种情况下，你需要显式地告诉TensorRT哪些张量是推理输出所必需的，没有标记为输出的张量被认为是可能被构建器优化掉的临时值。输出张量的数量没有限制，然而，将张量标记为输出可能会禁止对该张量进行某些优化。还必须为输入和输出张量指定名称（使用<code>ITensor::setName()</code>）。在推理时，你将为引擎提供一个指向输入和输出缓冲区的指针数组。为了确定引擎期望这些指针的顺序，可以使用张量名称进行查询。</p>
+<p>TensorRT网络定义的一个重要方面是，它包含指向模型权重的指针，构建器将这些指针复制到优化的引擎中。如果通过解析器创建网络，那么解析器将拥有权重占用的内存，因此在构建器运行之前不应该删除解析器对象。</p>
+<h4 id="2-2-1-使用C-UFF解析器API导入TensorFlow模型"><a href="#2-2-1-使用C-UFF解析器API导入TensorFlow模型" class="headerlink" title="2.2.1 使用C++ UFF解析器API导入TensorFlow模型"></a>2.2.1 使用C++ UFF解析器API导入TensorFlow模型</h4><p>NOTE:对于新项目来说，建议使用TensorFlow-TensorRT集成作为将TensorFlow网络转换为使用TensorRT进行推理的方法。</p>
+<p>从TensorFlow框架导入需要将TensorFlow模型转换为中间格式UFF(通用框架格式)。下面是转换的方法：  </p>
+<p>可以使用下面这段简单的代码转换后缀<code>.pb</code>的冻结图为<code>.uff</code>格式：<br><code>convert-to-uff input_file [-o output_file] [-O output_node]</code><br>列出TensorFlow中的层：<br><code>convert-to-uff input_file -l</code>  </p>
+<p>下面的步骤演示了如何使用C++解析器API导入TensorFlow模型:  </p>
+<p>1.构建 <code>builder</code>和<code>network</code>：<br><code>IBuilder* builder = createInferBuilder(gLogger);</code><br><code>INetworkDefinition* network = builder-&gt;createNetwork();</code>  </p>
+<p>2.构建UFF解析器：<br><code>IUFFParser* parser = createUffParser();</code>  </p>
+<p>3.向UFF解析器声明网络输入和输出:<br><code>parser-&gt;registerInput(&quot;Input_0&quot;, DimsCHW(1, 28, 28), UffInputOrder::kNCHW);</code><br><code>parser-&gt;registerOutput(&quot;Binary_3&quot;);</code><br>NOTE:TensorRT期望输入张量是CHW格式的。从TensorFlow导入时，确保输入张量的顺序是符合要求的，如果不是，则将其转换为CHW。</p>
+<p>4.解析导入的模型来填充网络:<br><code>parser-&gt;parse(uffFile, *network, nvinfer1::DataType::kFLOAT);</code></p>
+<h3 id="2-3-用C-构造引擎"><a href="#2-3-用C-构造引擎" class="headerlink" title="2.3 用C++构造引擎"></a>2.3 用C++构造引擎</h3><p>接下来的步骤是调用TensorRT构建器来创建优化的runtime。构建器的功能之一是在CUDA内核目录中搜索可用的最快实现，因此必须使用与优化引擎将要运行的相同的GPU进行构建。<br>构造器有很多属性，你可以按照顺序设置它们以便控制网络运行中诸如精度等信息，并且自动调谐参数，例如，当确定哪一次是最快的时候，TensorRT应该测定每一个内核的时间（更多的迭代导致更长时间的运行时，但更易受到噪声影响）。<br>你也可以通过查询构造器来了解硬件本地支持哪些降低的精度类型。  </p>
+<p>两个特别重要的属性是最大批处理大小和最大工作区大小：</p>
+<ul>
+<li>最大批处理大小指定TensorRT要优化的批大小，在运行时，可以选择较小的批处理大小；  </li>
+<li>层算法通常需要临时工作区，此参数限制网络中任何层可以使用的最大工作区大小。如果提供的空间不够，TensorRT可能无法找到给定层的实现；</li>
+</ul>
+<p>1.使用builder对象构建引擎:  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">builder-&gt;setMaxBatchSize(maxBatchSize);</span><br><span class="line">builder-&gt;setMaxWorkspaceSize(<span class="number">1</span> &lt;&lt; <span class="number">20</span>);</span><br><span class="line">ICudaEngine* engine = builder-&gt;buildCudaEngine(*network);</span><br></pre></td></tr></table></figure>
+<p>当引擎被构造出来时，TensorRT会复制权重。</p>
+<p>2.如果只需要network、builder、parser中的一个时，可以销毁其他：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">engine-&gt;destroy();</span><br><span class="line">network-&gt;destroy();</span><br><span class="line">builder-&gt;destroy();</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-使用C-序列化一个模型"><a href="#2-4-使用C-序列化一个模型" class="headerlink" title="2.4 使用C++序列化一个模型"></a>2.4 使用C++序列化一个模型</h3><p>序列化模型的做法是将引擎转换为一种特殊格式，以便在后续的推理中存储和使用。在执行推理的时候，你可以简单的反序列化这个引擎。序列化和反序列化是可选的。从一个网络定义中构造引擎是很费时的，你可以把它只做一次序列化然后在每次推理的时候将其反序列化，以此来避免每次应用程序重新运行时都要重新构建引擎。因此，在引擎构建好之后，用户通常希望序列化它以供以后使用。<br>在使用模型进行推理之前，并不一定需要对其进行序列化和反序列化——如果需要的话，引擎对象可以直接用于推理。  </p>
+<p>NOTE：序列化引擎不能跨平台或TensorRT版本移植，引擎特定于它们所构建的精确GPU模型(除了平台和TensorRT版本)。</p>
+<p>1.运行builder作为一个提前的脱机运行步骤，然后执行序列化：  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IHostMemory *serializedModel = engine-&gt;serialize();</span><br><span class="line"><span class="comment">// store model to disk</span></span><br><span class="line"><span class="comment">// &lt;…&gt;</span></span><br><span class="line">serializedModel-&gt;destroy();</span><br></pre></td></tr></table></figure>
+<p>2.构建一个runtime对象来反序列化：  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IRuntime* runtime = createInferRuntime(gLogger);</span><br><span class="line">ICudaEngine* engine = runtime-&gt;deserializeCudaEngine(modelData, modelSize, <span class="literal">nullptr</span>);</span><br></pre></td></tr></table></figure>
+<p>最后一个参数是当应用程序使用自定义层时的插件层工厂，更多详细信息参见使用自定义层拓展TensorRT。</p>
+<h3 id="2-5-使用C-执行推理"><a href="#2-5-使用C-执行推理" class="headerlink" title="2.5 使用C++执行推理"></a>2.5 使用C++执行推理</h3><p>当有一个引擎之后，下面的步骤阐述了如何使用C++执行推理的过程：</p>
+<p>1.创建一些空间来存储中间激活值。由于引擎包含网络定义和训练参数，因此需要额外的空间，它们在执行上下文中保存:  </p>
+<p><code>IExecutionContext *context = engine-&gt;createExecutionContext();</code><br>引擎可以有多个执行上下文，允许一组权重用于多个重叠推理任务。例如，您可以在并行CUDA流中处理图像，每个流使用一个引擎和一个上下文,每个上下文将在与引擎相同的GPU上创建。</p>
+<p>2.使用输入和输出blob名称来获得相应的输入和输出索引:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> inputIndex = engine.getBindingIndex(INPUT_BLOB_NAME);</span><br><span class="line"><span class="keyword">int</span> outputIndex = engine.getBindingIndex(OUTPUT_BLOB_NAME);</span><br></pre></td></tr></table></figure>
+<p>3.使用这些索引，设置一个缓冲区数组指向GPU上的输入和输出缓冲区:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span>* buffers[<span class="number">2</span>];</span><br><span class="line">buffers[inputIndex] = inputbuffer;</span><br><span class="line">buffers[outputIndex] = outputBuffer;</span><br></pre></td></tr></table></figure>
+<p>4.TensorRT的执行通常是异步的，因此将内核排队到CUDA流中:</p>
+<p><code>context.enqueue(batchSize, buffers, stream, nullptr);</code></p>
+<p>通常在内核之前和之后对异步memcpy()进行排队，以便在GPU中还没有数据时将其移动。enqueue()的最后一个参数是一个可选的CUDA事件，当输入缓冲区被使用并且它们的内存可以安全地重用时，将发出信号。<br>要确定内核(可能还有memcpy())什么时候完成，可以使用标准的CUDA同步机制，比如事件，或者等待流。</p>
+<h3 id="2-6-用C-进行内存管理"><a href="#2-6-用C-进行内存管理" class="headerlink" title="2.6 用C++进行内存管理"></a>2.6 用C++进行内存管理</h3><p>TensorRT提供了两种机制，允许应用程序更多地控制设备内存。<br>默认情况下，当创建一个<code>IExecutionContext</code>的时候，会分配持久设备内存以保存激活数据。为了避免这种分配，调用<code>createExecutionContextWithoutDeviceMemory</code>,然后，应用程序负责调用IExecutionContext::setDeviceMemory()来提供运行网络所需的内存,内存块的大小由ICudaEngine::getDeviceMemorySize()返回。<br>此外，通过实现<code>IGpuAllocator</code>接口，应用程序可以提供一个定制的分配器，以便在构建和运行时使用。当接口实现之后，在IBuilder或IRuntime接口上调用<code>setGpuAllocator(&amp;allocator);</code>  。然后，所有设备内存将通过该接口分配和释放。</p>
+<h2 id="3-使用plugin添加TensorRT中对TensorFlow不支持的op"><a href="#3-使用plugin添加TensorRT中对TensorFlow不支持的op" class="headerlink" title="3.使用plugin添加TensorRT中对TensorFlow不支持的op"></a>3.使用plugin添加TensorRT中对TensorFlow不支持的op</h2><h3 id="3-1-通过使用-C-API-添加自定义层"><a href="#3-1-通过使用-C-API-添加自定义层" class="headerlink" title="3.1 通过使用 C++ API 添加自定义层"></a>3.1 通过使用 C++ API 添加自定义层</h3><p>通过继承<code>IPluginV2</code>和<code>IPluginCreator</code>类来实现自定义层。<br><code>IPlugin</code>：<br><code>IPluginV2</code>类是实现plugin的基类，它包括版本控制支持并且能够使自定义层支持包括NCHW和单精度之外的其他数据格式；<br><code>IPluginCreator</code>:<br><code>IPluginCreator</code>类是自定义层的Creator类，用户可以使用它来获取插件名称、版本和插件字段参数。它还提供了在网络构建阶段生成插件对象和在推理中反序列化的方法；  </p>
+<p>TensorRT还提供了通过调用<code>REGISTER_TENSORRT_PLUGIN(pluginCreator)</code>来注册一个plugin的功能，将Plugin Creator通过静态方式注册到Plugin Registry中。在运行过程中，Plugin Registry能够通过外部函数<code>getPluginRegistry()</code>来查询。Plugin Registry中存储了所有注册过的Plugin Creator的指针并且被应用到基于plugin名称和版本的特定Plugin Creator的查找。TensorRT库包含了很多能被加载到应用程序中的plugin。这些plugin的版本被置为1。这些plugin的名称为：  </p>
+<ul>
+<li>RPORT_TRT</li>
+<li>Normalize_TRT</li>
+<li>PriorBox_TRT</li>
+<li>GridAnchor_TRT</li>
+<li>NMS_TRT</li>
+<li>LReLU_TRT</li>
+<li>Reorg_TRT</li>
+<li>Region_TRT</li>
+<li>Clip_TRT</li>
+</ul>
+<p>为了在应用程序中使用TensorRT中已注册的plugins，<code>libnvinfer_plugin.so</code>库必须被加载，并且所有的plugin必须是已注册的。这些能够通过在应用程序代码中调用<code>initLibNvInferPlugins(void* logger, const char* libNamespace)()</code>方法来实现。  </p>
+<p>如果你有你自己的plugin库，你可以包含一个类似的入口指针，将注册表中的所有插件注册到一个唯一的命名空间中。这样可以保证在不同的插件库之间build时没有插件命名冲突。  </p>
+<p>在使用<code>Plugin Creator</code>的时候，<code>IPluginCreator::createPlugin()</code>方法可以返回IPluginV2类型的plugin对象，这个对象可以使用<code>addPluginV2()</code>被添加到TensorRT network中，<code>addPluginV2()</code>的作用就是创建并且添加一个层到网络中，然后把这个层和对应的plugin绑定。这个方法还会返回一个到这个层的指针（类型为<code>IPluginV2Layer</code>）,这一指针可以用来指向该层或者插件本身（通过<code>getPlugin()</code>）；</p>
+<p>举个例子，为了将插件层添加到你的网络中，并把插件名称设置为<code>pluginName</code>,版本设置为<code>pluginVersion</code>，你可以执行如下操作：  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Use the extern function getPluginRegistry to access the global TensorRT Plugin Registry</span></span><br><span class="line"><span class="comment">//使用外部函数getPluginRegistry来访问全局TensorRT plugin注册表</span></span><br><span class="line"><span class="keyword">auto</span> creator = getPluginRegistry()-&gt;getPluginCreator(pluginName, pluginVersion);</span><br><span class="line"><span class="keyword">const</span> PluginFieldCollection* pluginFC = creator-&gt;getFieldNames();</span><br><span class="line"><span class="comment">//populate the field parameters (say layerFields) for the plugin layer</span></span><br><span class="line"><span class="comment">//填充插件层的字段参数（比如layerFields）</span></span><br><span class="line">PluginFieldCollection *pluginData = parseAndFillFields(pluginFC, layerFields);</span><br><span class="line"><span class="comment">//create the plugin object using the layerName and the plugin meta data</span></span><br><span class="line"><span class="comment">//使用layerName和plugin meta data来创建plugin对象</span></span><br><span class="line">IPluginV2 *pluginObj = creator-&gt;createPlugin(layerName, pluginData);</span><br><span class="line"><span class="comment">//add the plugin to the TensorRT network using the network API</span></span><br><span class="line"><span class="comment">//使用network API来把plugin添加到TensorRT network中</span></span><br><span class="line"><span class="keyword">auto</span> layer = network.addPluginV2(&amp;inputs[<span class="number">0</span>], <span class="keyword">int</span>(inputs.size()), pluginObj);</span><br><span class="line">… (build rest of the network <span class="keyword">and</span> serialize engine)</span><br><span class="line"><span class="comment">// Destroy the plugin object</span></span><br><span class="line">pluginObj-&gt;destroy()</span><br><span class="line">… (destroy network, engine, builder)</span><br><span class="line">… (<span class="built_in">free</span> allocated pluginData)</span><br></pre></td></tr></table></figure>
+<p>在传递给<code>createPlugin</code>之前，<code>pluginData</code>应该在堆上分配PluginField条目；  </p>
+<p>上面的<code>createPlugin</code>方法将在堆上创建一个新的plugin对象，并返回指向该对象的指针。确保你销毁了plugin对象，就像上面所展示的那样，这样可以避免内存泄漏的问题；  </p>
+<p>在序列化过程中，TensorRT引擎会在内部为所有<code>IPluginV2</code>类型的plugin储存其plugin类型、版本以及命名空间（如果存在的话）。在反序列化过程中，TensorRT引擎会查找这些信息，以便从插件注册表中找到Plugin Creator。这就使TensorRT引擎能够在内部调用<code>IPluginCreator::deserializePlugin()</code>方法。在反序列化过程中创建的插件对象将由TensorRT引擎通过调用<code>IPluginV2::destroy()</code>方法在内部销毁。</p>
+<h3 id="3-2-在c-中为TensorFlow网络添加一个定制的插件层-custom-layer"><a href="#3-2-在c-中为TensorFlow网络添加一个定制的插件层-custom-layer" class="headerlink" title="3.2 在c++中为TensorFlow网络添加一个定制的插件层(custom layer)"></a>3.2 在c++中为TensorFlow网络添加一个定制的插件层(custom layer)</h3><p>（1）.实现<code>IPluginV2</code>和<code>IPluginCreator</code>类；<br>（2）.将TensorFlow操作映射到plugin操作，可以使用<code>graphsurgeon</code>来实现。例如，参考下面的代码片段将TensorFlow Relu6操作映射到一个插件:  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> graphsurgeon <span class="keyword">as</span> gs</span><br><span class="line"></span><br><span class="line">lrelu_node = gs.create_plugin_node(name=”trt_lrelu”, op=”LReLU_TRT”,</span><br><span class="line"> negSlope=<span class="number">0.2</span>)</span><br><span class="line">namespace_plugin_map = &#123; “tf_lrelu” : lrelu_node &#125;</span><br><span class="line"><span class="comment"># Transform TensorFlow graph using graphsurgeon and save to UFF</span></span><br><span class="line">dynamic_graph = gs.DynamicGraph(tf_lrelu.graph)</span><br><span class="line">dynamic_graph.collapse_namespaces(namespace_plugin_map)</span><br><span class="line"><span class="comment"># Run UFF converter using new graphdef</span></span><br><span class="line">uff_model = uff.from_tensorflow(dynamic_graph.as_graph_def(), [<span class="string">"trt_lrelu"</span>],</span><br><span class="line"> output_filename=”test_lrelu.uff”, text=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中,<code>tf_lrelu</code>是TensorFlow图中LRelu结点的名称。它通过op <code>LReLU_TRT</code>将tf_lrelu结点映射到一个自定义plugin结点，<code>LReLU_TRT</code>是被使用的plugin的名称。将上面的代码保存为<code>config.py</code>文件。如果plugin层需要参数，它们应该作为参数传递给<code>s.create_plugin_node</code>。</p>
+<p>（3）.调用UFF-converter，设置预处理-p标志:<br><code>convert-to-uff frozen_inference_graph.pb -p config.py -t</code><br>这将生成一个UFF文件，TensorRT plugin结点将替换TensorFlow操作。</p>
+<p>（4）.TensorRT使用UFF解析器运行预处理和转换的UFF文件。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TensorRT/" rel="tag"># TensorRT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/05/PerformanceAnalysis/" rel="next" title="PerformanceAnalysis">
+                <i class="fa fa-chevron-left"></i> PerformanceAnalysis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODIzNC8xNDc2Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Junyu Zhang</p>
+              <p class="site-description motion-element" itemprop="description">我的个人学习笔记和技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangjy982" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1174299705@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/zjy982" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100011412761977" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.youtube.com/channel/UCUo8LIjuwnoV0oV05wmJiGQ" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/junyu4856" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorRT开发者手册"><span class="nav-text">TensorRT开发者手册</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是TensorRT？"><span class="nav-text">1.什么是TensorRT？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-TensorRT的优势"><span class="nav-text">1.1 TensorRT的优势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-谁能够从TensorRT中获益？"><span class="nav-text">1.1.1 谁能够从TensorRT中获益？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-TensorRT适用于哪里？"><span class="nav-text">1.2 TensorRT适用于哪里？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#阶段1：训练"><span class="nav-text">阶段1：训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阶段2：提出部署方案"><span class="nav-text">阶段2：提出部署方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阶段三：执行部署方案"><span class="nav-text">阶段三：执行部署方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-TensorRT是如何工作的？"><span class="nav-text">1.3 TensorRT是如何工作的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-TensorRT核心API"><span class="nav-text">1.4 TensorRT核心API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用C-API与TensorRT一起工作"><span class="nav-text">2.使用C++ API与TensorRT一起工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-在C-中实例化TensorRT对象"><span class="nav-text">2.1 在C++中实例化TensorRT对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-用C-创建网络定义"><span class="nav-text">2.2 用C++创建网络定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-使用C-UFF解析器API导入TensorFlow模型"><span class="nav-text">2.2.1 使用C++ UFF解析器API导入TensorFlow模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-用C-构造引擎"><span class="nav-text">2.3 用C++构造引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-使用C-序列化一个模型"><span class="nav-text">2.4 使用C++序列化一个模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-使用C-执行推理"><span class="nav-text">2.5 使用C++执行推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-用C-进行内存管理"><span class="nav-text">2.6 用C++进行内存管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用plugin添加TensorRT中对TensorFlow不支持的op"><span class="nav-text">3.使用plugin添加TensorRT中对TensorFlow不支持的op</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-通过使用-C-API-添加自定义层"><span class="nav-text">3.1 通过使用 C++ API 添加自定义层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-在c-中为TensorFlow网络添加一个定制的插件层-custom-layer"><span class="nav-text">3.2 在c++中为TensorFlow网络添加一个定制的插件层(custom layer)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyu Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SoftwareEngineering," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="俊余的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、bug计分1.第一个bug(1).标题：于洋功能1输出格式错误，多加了words(2).bug内容：a.测试环境Windows Professional 64bit;cmd; b.准备工作将于洋同学的wf.py文件转换为Windows可执行文件; c.测试步骤进入生成的wf.exe文件所在文件夹;输入 wf -s test.txt   d.运行结果插入yufunction1图片 e.期待运行结">
+<meta name="keywords" content="SoftwareEngineering">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作业要求20170925-2 功能测试">
+<meta property="og:url" content="http://blog.ijunyu.top/2018/09/27/BugCount/index.html">
+<meta property="og:site_name" content="俊余的博客">
+<meta property="og:description" content="一、bug计分1.第一个bug(1).标题：于洋功能1输出格式错误，多加了words(2).bug内容：a.测试环境Windows Professional 64bit;cmd; b.准备工作将于洋同学的wf.py文件转换为Windows可执行文件; c.测试步骤进入生成的wf.exe文件所在文件夹;输入 wf -s test.txt   d.运行结果插入yufunction1图片 e.期待运行结">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-04T08:56:00.152Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作业要求20170925-2 功能测试">
+<meta name="twitter:description" content="一、bug计分1.第一个bug(1).标题：于洋功能1输出格式错误，多加了words(2).bug内容：a.测试环境Windows Professional 64bit;cmd; b.准备工作将于洋同学的wf.py文件转换为Windows可执行文件; c.测试步骤进入生成的wf.exe文件所在文件夹;输入 wf -s test.txt   d.运行结果插入yufunction1图片 e.期待运行结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.ijunyu.top/2018/09/27/BugCount/"/>
+
+
+
+
+
+  <title>作业要求20170925-2 功能测试 | 俊余的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">俊余的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">东北师范大学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ijunyu.top/2018/09/27/BugCount/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junyu Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊余的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">作业要求20170925-2 功能测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-27T14:26:05+08:00">
+                2018-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,100字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、bug计分"><a href="#一、bug计分" class="headerlink" title="一、bug计分"></a>一、bug计分</h1><h2 id="1-第一个bug"><a href="#1-第一个bug" class="headerlink" title="1.第一个bug"></a>1.第一个bug</h2><h3 id="1-标题：于洋功能1输出格式错误，多加了words"><a href="#1-标题：于洋功能1输出格式错误，多加了words" class="headerlink" title="(1).标题：于洋功能1输出格式错误，多加了words"></a>(1).标题：于洋功能1输出格式错误，多加了words</h3><h3 id="2-bug内容："><a href="#2-bug内容：" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境"><a href="#a-测试环境" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作"><a href="#b-准备工作" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将于洋同学的wf.py文件转换为Windows可执行文件;</p>
+<h4 id="c-测试步骤"><a href="#c-测试步骤" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>进入生成的wf.exe文件所在文件夹;<br>输入 <code>wf -s test.txt</code>  </p>
+<h4 id="d-运行结果"><a href="#d-运行结果" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>插入yufunction1图片</p>
+<h4 id="e-期待运行结果"><a href="#e-期待运行结果" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>插入myfunction1</p>
+<h4 id="f-运行结果与期待运行结果的差异"><a href="#f-运行结果与期待运行结果的差异" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>运行结果比期待运行结果的”total”后面多出现了一个单词”words”</p>
+<h3 id="3-佐证材料"><a href="#3-佐证材料" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图"><a href="#a-运行截图" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入yufunction1图片</p>
+<h4 id="b-作业spec"><a href="#b-作业spec" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h2 id="2-第二个bug"><a href="#2-第二个bug" class="headerlink" title="2.第二个bug"></a>2.第二个bug</h2><h3 id="1-标题：于洋功能二只输出词频排名前10的单词"><a href="#1-标题：于洋功能二只输出词频排名前10的单词" class="headerlink" title="(1).标题：于洋功能二只输出词频排名前10的单词"></a>(1).标题：于洋功能二只输出词频排名前10的单词</h3><h3 id="2-bug内容：-1"><a href="#2-bug内容：-1" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-1"><a href="#a-测试环境-1" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作-1"><a href="#b-准备工作-1" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将于洋同学的wf.py文件转换为Windows可执行文件;</p>
+<h4 id="c-测试步骤-1"><a href="#c-测试步骤-1" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>进入生成的wf.exe文件所在文件夹;<br>输入 <code>wf war_and_peace.txt</code>  </p>
+<h4 id="d-运行结果-1"><a href="#d-运行结果-1" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>输出了total和词频排名前10的单词及对应词频</p>
+<h4 id="e-期待运行结果-1"><a href="#e-期待运行结果-1" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>输出total值和所有不重复单词及对应词频</p>
+<h4 id="f-运行结果与期待运行结果的差异-1"><a href="#f-运行结果与期待运行结果的差异-1" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>运行结果比期待运行结果少了词频排名不在前10中的数据</p>
+<h3 id="3-佐证材料-1"><a href="#3-佐证材料-1" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-1"><a href="#a-运行截图-1" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入yufunction2图片</p>
+<h4 id="b-作业spec-1"><a href="#b-作业spec-1" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h2 id="3-第三个bug"><a href="#3-第三个bug" class="headerlink" title="3.第三个bug"></a>3.第三个bug</h2><h3 id="1-标题：孙韦男命令行运行程序弹出：”please-input-the-name-of-book”"><a href="#1-标题：孙韦男命令行运行程序弹出：”please-input-the-name-of-book”" class="headerlink" title="(1).标题：孙韦男命令行运行程序弹出：”please input the name of book”"></a>(1).标题：孙韦男命令行运行程序弹出：”please input the name of book”</h3><h3 id="2-bug内容：-2"><a href="#2-bug内容：-2" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-2"><a href="#a-测试环境-2" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>bash shell;</p>
+<h4 id="b-准备工作-2"><a href="#b-准备工作-2" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将孙韦男同学的项目下载;</p>
+<h4 id="c-测试步骤-2"><a href="#c-测试步骤-2" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>使用git bash打开项目的main.sh文件;    </p>
+<h4 id="d-运行结果-2"><a href="#d-运行结果-2" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>在bash shell中直接弹出提示消息：”please input the name of book”</p>
+<h4 id="e-期待运行结果-2"><a href="#e-期待运行结果-2" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>命令行直接输入参数运行程序；</p>
+<h4 id="f-运行结果与期待运行结果的差异-2"><a href="#f-运行结果与期待运行结果的差异-2" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>虽然看起来是命令行，但是实际上还是控制台操作；</p>
+<h3 id="3-佐证材料-2"><a href="#3-佐证材料-2" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-2"><a href="#a-运行截图-2" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入swnbug1图片</p>
+<h4 id="b-作业spec-2"><a href="#b-作业spec-2" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h2 id="4-第四个bug"><a href="#4-第四个bug" class="headerlink" title="4.第四个bug"></a>4.第四个bug</h2><h3 id="1-标题：孙韦男功能1单词输出未排序"><a href="#1-标题：孙韦男功能1单词输出未排序" class="headerlink" title="(1).标题：孙韦男功能1单词输出未排序"></a>(1).标题：孙韦男功能1单词输出未排序</h3><h3 id="2-bug内容：-3"><a href="#2-bug内容：-3" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-3"><a href="#a-测试环境-3" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作-3"><a href="#b-准备工作-3" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将孙韦男同学的项目下载;</p>
+<h4 id="c-测试步骤-3"><a href="#c-测试步骤-3" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>将py文件转化为Windows可执行文件(.exe);<br>输入 <code>wf -s test.txt</code>   </p>
+<h4 id="d-运行结果-3"><a href="#d-运行结果-3" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>单词未经过词频从高到低排序就执行了输出；</p>
+<h4 id="e-期待运行结果-3"><a href="#e-期待运行结果-3" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>单词按照词频排序后输出；</p>
+<h4 id="f-运行结果与期待运行结果的差异-3"><a href="#f-运行结果与期待运行结果的差异-3" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>单词及词频输出未排序；</p>
+<h3 id="3-佐证材料-3"><a href="#3-佐证材料-3" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-3"><a href="#a-运行截图-3" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入swnrepairbug1图片</p>
+<h4 id="b-作业spec-3"><a href="#b-作业spec-3" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h2 id="5-第五个bug"><a href="#5-第五个bug" class="headerlink" title="5.第五个bug"></a>5.第五个bug</h2><h3 id="1-标题：孙韦男功能1的total位置和格式不对"><a href="#1-标题：孙韦男功能1的total位置和格式不对" class="headerlink" title="(1).标题：孙韦男功能1的total位置和格式不对"></a>(1).标题：孙韦男功能1的total位置和格式不对</h3><h3 id="2-bug内容：-4"><a href="#2-bug内容：-4" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-4"><a href="#a-测试环境-4" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作-4"><a href="#b-准备工作-4" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将孙韦男同学的项目下载;</p>
+<h4 id="c-测试步骤-4"><a href="#c-测试步骤-4" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>将py文件转化为Windows可执行文件(.exe);<br>输入 <code>wf -s test.txt</code>  </p>
+<h4 id="d-运行结果-4"><a href="#d-运行结果-4" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>total出现在单词及其词频之后；</p>
+<h4 id="e-期待运行结果-4"><a href="#e-期待运行结果-4" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>先输出total值再输出单词及其词频；</p>
+<h4 id="f-运行结果与期待运行结果的差异-4"><a href="#f-运行结果与期待运行结果的差异-4" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>输出格式存在错误；</p>
+<h3 id="3-佐证材料-4"><a href="#3-佐证材料-4" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-4"><a href="#a-运行截图-4" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入swnbug2图片</p>
+<h4 id="b-作业spec-4"><a href="#b-作业spec-4" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h1 id="二、自己的bug报告"><a href="#二、自己的bug报告" class="headerlink" title="二、自己的bug报告"></a>二、自己的bug报告</h1><h2 id="1-第一个bug-1"><a href="#1-第一个bug-1" class="headerlink" title="1.第一个bug"></a>1.第一个bug</h2><h3 id="1-标题：功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容"><a href="#1-标题：功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容" class="headerlink" title="(1).标题：功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容"></a>(1).标题：功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容</h3><h3 id="2-bug内容：-5"><a href="#2-bug内容：-5" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-5"><a href="#a-测试环境-5" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作-5"><a href="#b-准备工作-5" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将自己的wf.py文件转换为Windows可执行文件;</p>
+<h4 id="c-测试步骤-5"><a href="#c-测试步骤-5" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>进入生成的wf.exe文件所在文件夹;<br>输入 <code>wf -s war_and_peace.txt</code>  </p>
+<h4 id="d-运行结果-5"><a href="#d-运行结果-5" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>执行后若文件多行之间使用换行符换行则只能读取文件第一行的内容</p>
+<h4 id="e-期待运行结果-5"><a href="#e-期待运行结果-5" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>重定向之后的输出应该和功能二相同；</p>
+<h4 id="f-运行结果与期待运行结果的差异-5"><a href="#f-运行结果与期待运行结果的差异-5" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>只读取了文件内容第一个换行符之前的内容；</p>
+<h3 id="3-佐证材料-5"><a href="#3-佐证材料-5" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-5"><a href="#a-运行截图-5" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入mybug1图片</p>
+<h4 id="b-作业spec-5"><a href="#b-作业spec-5" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入spec4</p>
+<h2 id="2-第二个bug-1"><a href="#2-第二个bug-1" class="headerlink" title="2.第二个bug"></a>2.第二个bug</h2><h3 id="1-标题：对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码"><a href="#1-标题：对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码" class="headerlink" title="(1).标题：对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码"></a>(1).标题：对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码</h3><h3 id="2-bug内容：-6"><a href="#2-bug内容：-6" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-6"><a href="#a-测试环境-6" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作-6"><a href="#b-准备工作-6" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将自己的wf.py文件转换为Windows可执行文件;</p>
+<h4 id="c-测试步骤-6"><a href="#c-测试步骤-6" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>进入生成的wf.exe文件所在文件夹;<br>输入 <code>wf b.txt</code>  </p>
+<h4 id="d-运行结果-6"><a href="#d-运行结果-6" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>在词频统计的单词显示中，带有”—“符号的单词出现了乱码。</p>
+<h4 id="e-期待运行结果-6"><a href="#e-期待运行结果-6" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>正确显示单词的完整内容</p>
+<h4 id="f-运行结果与期待运行结果的差异-6"><a href="#f-运行结果与期待运行结果的差异-6" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>出现乱码</p>
+<h3 id="3-佐证材料-6"><a href="#3-佐证材料-6" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-6"><a href="#a-运行截图-6" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入mybug2图片</p>
+<h4 id="b-作业spec-6"><a href="#b-作业spec-6" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h2 id="3-第三个bug-1"><a href="#3-第三个bug-1" class="headerlink" title="3.第三个bug"></a>3.第三个bug</h2><h3 id="1-标题：输出单词及词频的时候多加了空行，功能2total缺少了words"><a href="#1-标题：输出单词及词频的时候多加了空行，功能2total缺少了words" class="headerlink" title="(1).标题：输出单词及词频的时候多加了空行，功能2total缺少了words"></a>(1).标题：输出单词及词频的时候多加了空行，功能2total缺少了words</h3><h3 id="2-bug内容：-7"><a href="#2-bug内容：-7" class="headerlink" title="(2).bug内容："></a>(2).bug内容：</h3><h4 id="a-测试环境-7"><a href="#a-测试环境-7" class="headerlink" title="a.测试环境"></a>a.测试环境</h4><p>Windows Professional 64bit;<br>cmd;</p>
+<h4 id="b-准备工作-7"><a href="#b-准备工作-7" class="headerlink" title="b.准备工作"></a>b.准备工作</h4><p>将自己的wf.py文件转换为Windows可执行文件;</p>
+<h4 id="c-测试步骤-7"><a href="#c-测试步骤-7" class="headerlink" title="c.测试步骤"></a>c.测试步骤</h4><p>进入生成的wf.exe文件所在文件夹;<br>输入 <code>wf test.txt</code>  </p>
+<h4 id="d-运行结果-7"><a href="#d-运行结果-7" class="headerlink" title="d.运行结果"></a>d.运行结果</h4><p>单词之间有多余的空行，total后面只有统计的数据</p>
+<h4 id="e-期待运行结果-7"><a href="#e-期待运行结果-7" class="headerlink" title="e.期待运行结果"></a>e.期待运行结果</h4><p>单词之间没有空行，total后面有统计的数据和单词”words”</p>
+<h4 id="f-运行结果与期待运行结果的差异-7"><a href="#f-运行结果与期待运行结果的差异-7" class="headerlink" title="f.运行结果与期待运行结果的差异"></a>f.运行结果与期待运行结果的差异</h4><p>多了空行少了”words”</p>
+<h3 id="3-佐证材料-7"><a href="#3-佐证材料-7" class="headerlink" title="(3).佐证材料"></a>(3).佐证材料</h3><h4 id="a-运行截图-7"><a href="#a-运行截图-7" class="headerlink" title="a.运行截图"></a>a.运行截图</h4><p>插入mybug3图片</p>
+<h4 id="b-作业spec-7"><a href="#b-作业spec-7" class="headerlink" title="b.作业spec"></a>b.作业spec</h4><p>插入function1spec</p>
+<h1 id="三、修改bug"><a href="#三、修改bug" class="headerlink" title="三、修改bug"></a>三、修改bug</h1><h2 id="1-修改”于洋功能1输出格式错误，多加了words”这一bug"><a href="#1-修改”于洋功能1输出格式错误，多加了words”这一bug" class="headerlink" title="1.修改”于洋功能1输出格式错误，多加了words”这一bug"></a>1.修改”于洋功能1输出格式错误，多加了words”这一bug</h2><h3 id="1-修改后git地址："><a href="#1-修改后git地址：" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/modify_yuyang_bugs.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/modify_yuyang_bugs.git</a>  </p>
+<h3 id="2-修改后输出截图："><a href="#2-修改后输出截图：" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>yuyangdebug1</p>
+<h3 id="3-测试报告："><a href="#3-测试报告：" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt测试通过；<br>未发现测试用例之外的bug；  </p>
+<h2 id="2-修改”于洋功能二只输出词频排名前10的单词”这一bug"><a href="#2-修改”于洋功能二只输出词频排名前10的单词”这一bug" class="headerlink" title="2.修改”于洋功能二只输出词频排名前10的单词”这一bug"></a>2.修改”于洋功能二只输出词频排名前10的单词”这一bug</h2><h3 id="1-修改后git地址：-1"><a href="#1-修改后git地址：-1" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/modify_yuyang_bugs.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/modify_yuyang_bugs.git</a>  </p>
+<h3 id="2-修改后输出截图：-1"><a href="#2-修改后输出截图：-1" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>yuyangdebug2</p>
+<h3 id="3-测试报告：-1"><a href="#3-测试报告：-1" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>未发现测试用例之外的bug；</p>
+<h2 id="3-修改”孙韦男命令行运行程序弹出：”please-input-the-name-of-book””这一bug"><a href="#3-修改”孙韦男命令行运行程序弹出：”please-input-the-name-of-book””这一bug" class="headerlink" title="3.修改”孙韦男命令行运行程序弹出：”please input the name of book””这一bug"></a>3.修改”孙韦男命令行运行程序弹出：”please input the name of book””这一bug</h2><h3 id="1-修改后git地址：-2"><a href="#1-修改后git地址：-2" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/modify_swn_bugs.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/modify_swn_bugs.git</a>  </p>
+<h3 id="2-修改后输出截图：-2"><a href="#2-修改后输出截图：-2" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>swnrepairbug1</p>
+<h3 id="3-测试报告：-2"><a href="#3-测试报告：-2" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>将py文件转化为可执行文件；<br>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>测试完成后发现新bug：<br>a.单词输出未排序；<br>b.total输出位置错误； </p>
+<h2 id="4-修改”孙韦男功能1单词输出未排序”这一bug"><a href="#4-修改”孙韦男功能1单词输出未排序”这一bug" class="headerlink" title="4.修改”孙韦男功能1单词输出未排序”这一bug"></a>4.修改”孙韦男功能1单词输出未排序”这一bug</h2><h3 id="1-修改后git地址：-3"><a href="#1-修改后git地址：-3" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/modify_swn_bugs.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/modify_swn_bugs.git</a>  </p>
+<h3 id="2-修改后输出截图：-3"><a href="#2-修改后输出截图：-3" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>swnbug2</p>
+<h3 id="3-测试报告：-3"><a href="#3-测试报告：-3" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>测试完成后未发现新bug；</p>
+<h2 id="5-修改”孙韦男功能1的total位置和格式不对”这一bug"><a href="#5-修改”孙韦男功能1的total位置和格式不对”这一bug" class="headerlink" title="5.修改”孙韦男功能1的total位置和格式不对”这一bug"></a>5.修改”孙韦男功能1的total位置和格式不对”这一bug</h2><h3 id="1-修改后git地址：-4"><a href="#1-修改后git地址：-4" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/modify_swn_bugs.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/modify_swn_bugs.git</a>  </p>
+<h3 id="2-修改后输出截图：-4"><a href="#2-修改后输出截图：-4" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>swnrepairbug2</p>
+<h3 id="3-测试报告：-4"><a href="#3-测试报告：-4" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>测试完成后未发现新bug；</p>
+<h2 id="6-修改”自己功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容”这一bug"><a href="#6-修改”自己功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容”这一bug" class="headerlink" title="6.修改”自己功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容”这一bug"></a>6.修改”自己功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容”这一bug</h2><h3 id="1-修改后git地址：-5"><a href="#1-修改后git地址：-5" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/word_count.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/word_count.git</a>  </p>
+<h3 id="2-修改后输出截图：-5"><a href="#2-修改后输出截图：-5" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>mybugrepair1</p>
+<h3 id="3-测试报告：-5"><a href="#3-测试报告：-5" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>测试完成后未发现新bug;</p>
+<h2 id="7-修改”自己对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码”这一bug"><a href="#7-修改”自己对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码”这一bug" class="headerlink" title="7.修改”自己对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码”这一bug"></a>7.修改”自己对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码”这一bug</h2><h3 id="1-修改后git地址：-6"><a href="#1-修改后git地址：-6" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/word_count.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/word_count.git</a>  </p>
+<h3 id="2-修改后输出截图：-6"><a href="#2-修改后输出截图：-6" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>mybugrepair2</p>
+<h3 id="3-测试报告：-6"><a href="#3-测试报告：-6" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>测试完成后未发现新bug;  </p>
+<h2 id="8-修改”自己输出单词及词频的时候多加了空行，功能2的total缺少了words”这一bug"><a href="#8-修改”自己输出单词及词频的时候多加了空行，功能2的total缺少了words”这一bug" class="headerlink" title="8.修改”自己输出单词及词频的时候多加了空行，功能2的total缺少了words”这一bug"></a>8.修改”自己输出单词及词频的时候多加了空行，功能2的total缺少了words”这一bug</h2><h3 id="1-修改后git地址：-7"><a href="#1-修改后git地址：-7" class="headerlink" title="(1).修改后git地址："></a>(1).修改后git地址：</h3><p><a href="https://git.coding.net/zhangjy982/word_count.git" target="_blank" rel="noopener">https://git.coding.net/zhangjy982/word_count.git</a>  </p>
+<h3 id="2-修改后输出截图：-7"><a href="#2-修改后输出截图：-7" class="headerlink" title="(2).修改后输出截图："></a>(2).修改后输出截图：</h3><p>mybugrepair3</p>
+<h3 id="3-测试报告：-7"><a href="#3-测试报告：-7" class="headerlink" title="(3).测试报告："></a>(3).测试报告：</h3><p>test.txt、war_and_peace.txt、the_dead_return.txt均测试通过；<br>测试完成后未发现新bug;  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SoftwareEngineering/" rel="tag"># SoftwareEngineering</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/24/WordsFreq/" rel="next" title="词频统计">
+                <i class="fa fa-chevron-left"></i> 词频统计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/HowToChangeGitReposity/" rel="prev" title="如何更改Git提交的远程仓库">
+                如何更改Git提交的远程仓库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODIzNC8xNDc2Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Junyu Zhang</p>
+              <p class="site-description motion-element" itemprop="description">我的个人学习笔记和技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangjy982" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1174299705@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/zjy982" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100011412761977" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.youtube.com/channel/UCUo8LIjuwnoV0oV05wmJiGQ" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/junyu4856" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、bug计分"><span class="nav-text">一、bug计分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一个bug"><span class="nav-text">1.第一个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：于洋功能1输出格式错误，多加了words"><span class="nav-text">(1).标题：于洋功能1输出格式错误，多加了words</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容："><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-第二个bug"><span class="nav-text">2.第二个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：于洋功能二只输出词频排名前10的单词"><span class="nav-text">(1).标题：于洋功能二只输出词频排名前10的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-1"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-1"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-1"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-1"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-1"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-1"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-1"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-1"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-1"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-1"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-第三个bug"><span class="nav-text">3.第三个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：孙韦男命令行运行程序弹出：”please-input-the-name-of-book”"><span class="nav-text">(1).标题：孙韦男命令行运行程序弹出：”please input the name of book”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-2"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-2"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-2"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-2"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-2"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-2"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-2"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-2"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-2"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-2"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-第四个bug"><span class="nav-text">4.第四个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：孙韦男功能1单词输出未排序"><span class="nav-text">(1).标题：孙韦男功能1单词输出未排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-3"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-3"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-3"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-3"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-3"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-3"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-3"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-3"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-3"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-3"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-第五个bug"><span class="nav-text">5.第五个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：孙韦男功能1的total位置和格式不对"><span class="nav-text">(1).标题：孙韦男功能1的total位置和格式不对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-4"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-4"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-4"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-4"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-4"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-4"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-4"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-4"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-4"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-4"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、自己的bug报告"><span class="nav-text">二、自己的bug报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一个bug-1"><span class="nav-text">1.第一个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容"><span class="nav-text">(1).标题：功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-5"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-5"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-5"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-5"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-5"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-5"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-5"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-5"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-5"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-5"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-第二个bug-1"><span class="nav-text">2.第二个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码"><span class="nav-text">(1).标题：对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-6"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-6"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-6"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-6"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-6"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-6"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-6"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-6"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-6"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-6"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-第三个bug-1"><span class="nav-text">3.第三个bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标题：输出单词及词频的时候多加了空行，功能2total缺少了words"><span class="nav-text">(1).标题：输出单词及词频的时候多加了空行，功能2total缺少了words</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug内容：-7"><span class="nav-text">(2).bug内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-测试环境-7"><span class="nav-text">a.测试环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-准备工作-7"><span class="nav-text">b.准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-测试步骤-7"><span class="nav-text">c.测试步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-运行结果-7"><span class="nav-text">d.运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-期待运行结果-7"><span class="nav-text">e.期待运行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-运行结果与期待运行结果的差异-7"><span class="nav-text">f.运行结果与期待运行结果的差异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-佐证材料-7"><span class="nav-text">(3).佐证材料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-运行截图-7"><span class="nav-text">a.运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-作业spec-7"><span class="nav-text">b.作业spec</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、修改bug"><span class="nav-text">三、修改bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-修改”于洋功能1输出格式错误，多加了words”这一bug"><span class="nav-text">1.修改”于洋功能1输出格式错误，多加了words”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址："><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图："><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告："><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改”于洋功能二只输出词频排名前10的单词”这一bug"><span class="nav-text">2.修改”于洋功能二只输出词频排名前10的单词”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-1"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-1"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-1"><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-修改”孙韦男命令行运行程序弹出：”please-input-the-name-of-book””这一bug"><span class="nav-text">3.修改”孙韦男命令行运行程序弹出：”please input the name of book””这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-2"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-2"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-2"><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-修改”孙韦男功能1单词输出未排序”这一bug"><span class="nav-text">4.修改”孙韦男功能1单词输出未排序”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-3"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-3"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-3"><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改”孙韦男功能1的total位置和格式不对”这一bug"><span class="nav-text">5.修改”孙韦男功能1的total位置和格式不对”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-4"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-4"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-4"><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-修改”自己功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容”这一bug"><span class="nav-text">6.修改”自己功能4重定向对输入文本中的换行符执行了文件输入停止操作导致无法读取文件全部内容”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-5"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-5"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-5"><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-修改”自己对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码”这一bug"><span class="nav-text">7.修改”自己对于标点符号的处理仍有不完善，比如中文破折号的一半”—“在处理中出现了乱码”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-6"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-6"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-6"><span class="nav-text">(3).测试报告：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-修改”自己输出单词及词频的时候多加了空行，功能2的total缺少了words”这一bug"><span class="nav-text">8.修改”自己输出单词及词频的时候多加了空行，功能2的total缺少了words”这一bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改后git地址：-7"><span class="nav-text">(1).修改后git地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改后输出截图：-7"><span class="nav-text">(2).修改后输出截图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试报告：-7"><span class="nav-text">(3).测试报告：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyu Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
