@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ijunyu.top/2019/03/10/boostPython/</loc>
+    
+    <lastmod>2019-03-10T07:47:18.687Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ijunyu.top/2019/02/27/TensorRT-Document/</loc>
     
     <lastmod>2019-02-27T11:46:43.930Z</lastmod>
