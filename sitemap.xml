@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ijunyu.top/2018/09/27/BugCount/</loc>
+    
+    <lastmod>2019-03-10T08:32:42.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ijunyu.top/2019/03/10/JilinTour/</loc>
+    
+    <lastmod>2019-03-10T08:32:00.813Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ijunyu.top/2019/03/10/boostPython/</loc>
     
     <lastmod>2019-03-10T07:54:50.457Z</lastmod>
@@ -16,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://blog.ijunyu.top/2018/10/05/JilinTour/</loc>
-    
-    <lastmod>2018-10-20T03:05:46.668Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.ijunyu.top/2018/09/24/WordsFreq/</loc>
     
     <lastmod>2018-10-05T08:29:55.876Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://blog.ijunyu.top/2018/10/05/PerformanceAnalysis/</loc>
     
     <lastmod>2018-10-05T08:29:47.905Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ijunyu.top/2018/09/27/BugCount/</loc>
-    
-    <lastmod>2018-10-04T08:56:00.152Z</lastmod>
     
   </url>
   

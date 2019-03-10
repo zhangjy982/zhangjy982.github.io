@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://blog.ijunyu.top/2018/09/27/BugCount/</loc>
+    <lastmod>2019-03-10T08:32:42.566Z</lastmod>
+    <data>
+        <display>
+        <title>功能测试</title>
+        <pubTime>2018-09-27T06:26:05.000Z</pubTime>
+        
+        <tag>SoftwareEngineering</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.ijunyu.top/2019/03/10/JilinTour/</loc>
+    <lastmod>2019-03-10T08:32:00.813Z</lastmod>
+    <data>
+        <display>
+        <title>模拟出游规划</title>
+        <pubTime>2019-03-10T07:45:37.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.ijunyu.top/2019/03/10/boostPython/</loc>
     <lastmod>2019-03-10T07:54:50.457Z</lastmod>
     <data>
@@ -38,21 +72,6 @@
 
     
   <url>
-    <loc>http://blog.ijunyu.top/2018/10/05/JilinTour/</loc>
-    <lastmod>2018-10-20T03:05:46.668Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2018-10-04T16:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.ijunyu.top/2018/09/24/WordsFreq/</loc>
     <lastmod>2018-10-05T08:29:55.876Z</lastmod>
     <data>
@@ -77,23 +96,6 @@
         <title>PerformanceAnalysis</title>
         <pubTime>2018-10-05T04:47:30.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.ijunyu.top/2018/09/27/BugCount/</loc>
-    <lastmod>2018-10-04T08:56:00.152Z</lastmod>
-    <data>
-        <display>
-        <title>作业要求20170925-2 功能测试</title>
-        <pubTime>2018-09-27T06:26:05.000Z</pubTime>
-        
-        <tag>SoftwareEngineering</tag>
-         
          
            
         </display>
