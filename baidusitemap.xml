@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://blog.ijunyu.top/2019/03/10/boostPython/</loc>
-    <lastmod>2019-03-10T07:47:18.687Z</lastmod>
+    <lastmod>2019-03-10T07:54:50.457Z</lastmod>
     <data>
         <display>
-        <title>boostPython</title>
+        <title>利用C++ Boost库将C++项目封装为Python模块</title>
         <pubTime>2019-03-10T07:45:37.000Z</pubTime>
         
         <tag>C++</tag>
